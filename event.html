@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafia - Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        leafia: {
+                            dark: '#033b32',   // Deepest green
+                            main: '#0f5142',   // Main brand green
+                            light: '#e8f5e9',  // Light green background
+                            yellow: '#facc15', // Accent yellow
+                            cream: '#fcfcfb',  // Off-white background
+                            gray: '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- Navbar (White Variant for Inner Pages) -->
+    <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="text-leafia-main text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                    <span class="font-bold text-xl tracking-tight text-leafia-dark">Leafia</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
+                    <a href="event.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Event</a>
+                    <a href="edukasi.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Edukasi</a>
+                    <a href="pickup.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Kirim Sampah</a>
+                    <a href="marketplace.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Marketplace</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="hidden md:flex items-center gap-3">
+                    <div class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-dark transition-colors">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
+                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8 text-sm text-gray-500 font-medium">
+            <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-leafia-main font-bold">Event</span>
+        </nav>
+
+        <!-- Search & Filter Bar -->
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
+            <!-- Search -->
+            <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" 
+                    class="block w-full pl-11 pr-4 py-4 bg-[#fcfcfb] border border-gray-100 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-leafia-main/20 focus:border-leafia-main transition-all" 
+                    placeholder="Ketik untuk mencari">
+            </div>
+            
+            <!-- Filter Dropdown -->
+            <div class="relative min-w-[200px]">
+                <select class="appearance-none block w-full pl-4 pr-10 py-4 bg-[#fcfcfb] border border-gray-100 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-leafia-main/20 focus:border-leafia-main cursor-pointer">
+                    <option>Semua Daerah</option>
+                    <option>Bali</option>
+                    <option>Jakarta</option>
+                    <option>Surabaya</option>
+                    <option>Kalimantan</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-4.png" alt="Kompos Event" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 28 Oktober 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Balai Warga RW 05
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Pelatihan Membuat Kompos Takakura Anti Bau
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Bingung sisa makanan di dapur mau dikemanakan? Yuk belajar membuat keranjang Takakura. Metode praktis mengolah sampah organik rumah tangga tanpa bau busuk.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +200 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Pak RT Ahmad</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-5.png" alt="Maggot BSF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 12 November 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Rumah Maggot Center
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Workshop Budidaya Maggot BSF untuk Pemula
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Ubah sampah sisa buah dan sayur menjadi pakan ternak bernilai ekonomi tinggi. Pelajari siklus hidup Black Soldier Fly (BSF) dan cara panennya.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +300 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Ibu Maria (Kader)</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-6.png" alt="Eco Enzyme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 20 Januari 2026
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Taman Kota
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Demo Pembuatan Eco-Enzyme Serbaguna
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Jangan buang kulit jeruk dan nanas! Mari belajar fermentasi kulit buah menjadi cairan pembersih alami yang wangi dan ramah lingkungan.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +300 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Siti Rahmawati</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-7.png" alt="Biopori" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 15 Februari 2026
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Lapangan RT 03
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Gerakan 1000 Lubang Biopori Kampung
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Cegah banjir dan suburkan tanah dengan membuat lubang resapan biopori. Bawa sampah organikmu untuk langsung dimasukkan ke lubang yang kita buat bersama.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +500 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Kang Asep</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-8.png" alt="Panen Sayur" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 10 Maret 2026
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Kebun Komunitas
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Panen Raya Sayur Organik Hasil Kompos
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Saatnya memetik hasil! Kita akan panen sawi, kangkung, dan cabai yang ditanam menggunakan pupuk kompos buatan warga sendiri. Ada pasar murah juga lho.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +400 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Ibu Dewi Kartika</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-9.png" alt="Bank Sampah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 7 April 2026
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Posyandu Mawar
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Sosialisasi Sistem Tukar Poin Bank Sampah
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Pelajari cara menukar sampah organik terpilah menjadi poin belanja atau token listrik. Sistem baru ini akan segera diterapkan di lingkungan kita.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +200 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Lestari Anindya</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center gap-2">
+            <button class="px-4 py-2 rounded-lg bg-yellow-100 text-yellow-800 text-xs font-bold hover:bg-yellow-200 transition-colors disabled:opacity-50">Prev</button>
+            <button class="w-8 h-8 rounded-lg bg-leafia-main text-white text-xs font-bold flex items-center justify-center">1</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">2</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">3</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">4</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">5</button>
+            <button class="px-4 py-2 rounded-lg bg-leafia-yellow text-leafia-dark text-xs font-bold hover:bg-yellow-300 transition-colors">Next</button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative bg-leafia-dark text-white pt-16 pb-8 overflow-hidden mt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/footer.png" 
+                 alt="Footer Background" 
+                 class="w-full h-full object-cover opacity-100">
+        </div>
+    
+        <!-- Overlay Hijau -->
+        <div class="absolute inset-0 bg-leafia-main/95 -z-1"></div>
+    
+        <!-- Footer Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo/yellow.png" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-2xl tracking-tight text-leafia-yellow">Leafia</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        Platform inovatif mengelola sampah organik menuju lingkungan bersih dan berkelanjutan untuk generasi mendatang.
+                    </p>
+                </div>
+    
+                <!-- Links 1 -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Tautan Cepat</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="index.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Beranda</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event</a></li>
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kirim Sampah</a></li>
+                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Services -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Layanan</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Jemput Kompos</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pelatihan Maggot</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Bank Sampah</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Konsultasi</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i>
+                            <span>Markas Kompos, Jl. Lestari No. 88<br>Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-leafia-yellow"></i>
+                            <span>+62-812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-leafia-yellow"></i>
+                            <span>halo@leafia.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-300">
+                &copy; 2025 Leafia. Dikelola oleh Komunitas Leafia.
+            </div>
+        </div>
+    </footer>   
+
+</body>
+</html>

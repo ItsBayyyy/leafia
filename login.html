@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - Leafia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        leafia: {
+                            dark: '#033b32',   // Deepest green
+                            main: '#0f5142',   // Main brand green
+                            light: '#e8f5e9',  // Light green background
+                            yellow: '#facc15', // Accent yellow
+                            cream: '#fcfcfb',  // Off-white background
+                            gray: '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <div class="min-h-screen flex">
+        
+        <div class="hidden lg:flex w-1/2 bg-leafia-dark relative items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Nature" class="absolute inset-0 w-full h-full object-cover opacity-40">
+            
+            <div class="relative z-10 p-12 text-white max-w-lg">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-10 h-10 bg-leafia-yellow rounded-xl flex items-center justify-center text-leafia-dark">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight">Leafia</span>
+                </div>
+                
+                <h2 class="text-4xl font-bold leading-tight mb-6">
+                    "Langkah kecilmu memilah sampah adalah lompatan besar bagi bumi."
+                </h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    Bergabunglah dengan 5.000+ pahlawan lingkungan lainnya dan tukar sampahmu menjadi kebaikan.
+                </p>
+
+                <div class="flex gap-8 border-t border-white/20 pt-8">
+                    <div>
+                        <span class="block text-3xl font-bold text-leafia-yellow">5K+</span>
+                        <span class="text-sm text-gray-300">Pengguna</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-bold text-leafia-yellow">12 Ton</span>
+                        <span class="text-sm text-gray-300">Sampah Diolah</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8 bg-[#fcfcfb] relative">
+            
+            <a href="index.html" class="absolute top-8 left-8 flex items-center gap-2 text-sm text-gray-500 hover:text-leafia-main transition-colors">
+                <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+
+            <div class="w-full max-w-md">
+                <div class="lg:hidden flex justify-center mb-8">
+                    <div class="flex items-center gap-2">
+                        <div class="text-leafia-main text-3xl"><i class="fa-solid fa-leaf"></i></div>
+                        <span class="font-bold text-2xl tracking-tight text-leafia-dark">Leafia</span>
+                    </div>
+                </div>
+
+                <div class="text-center lg:text-left mb-8">
+                    <h2 class="text-3xl font-bold text-leafia-dark mb-2">Selamat Datang Kembali! 👋</h2>
+                    <p class="text-gray-500">Masuk untuk mengelola sampah dan cek poinmu.</p>
+                </div>
+
+                <form action="index.html" method="GET" class="space-y-5">
+                    
+                    <div>
+                        <label class="block text-sm font-bold text-leafia-dark mb-2">Email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <input type="email" placeholder="nama@email.com" class="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-leafia-main focus:ring-2 focus:ring-leafia-main/20 transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="block text-sm font-bold text-leafia-dark">Password</label>
+                            <a href="#" class="text-xs font-bold text-leafia-main hover:underline">Lupa Password?</a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <input type="password" id="passwordInput" placeholder="••••••••" class="w-full pl-11 pr-12 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-leafia-main focus:ring-2 focus:ring-leafia-main/20 transition-all text-sm">
+                            <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600">
+                                <i class="fa-regular fa-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3.5 rounded-xl shadow-lg shadow-leafia-main/30 transition-all transform hover:-translate-y-0.5">
+                        Masuk Sekarang
+                    </button>
+
+                </form>
+
+                <div class="relative my-8">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-200"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-[#fcfcfb] text-gray-400">Atau masuk dengan</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center gap-2 py-3 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 transition-colors bg-white">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                        <span class="text-sm font-bold text-gray-600">Google</span>
+                    </button>
+                    <button class="flex items-center justify-center gap-2 py-3 border border-gray-200 rounded-xl hover:bg-white hover:border-gray-300 transition-colors bg-white">
+                        <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-5 h-5" alt="Facebook">
+                        <span class="text-sm font-bold text-gray-600">Facebook</span>
+                    </button>
+                </div>
+
+                <p class="text-center text-sm text-gray-500 mt-8">
+                    Belum punya akun? 
+                    <a href="register.html" class="font-bold text-leafia-main hover:underline">Daftar Gratis</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+
+</body>
+</html>

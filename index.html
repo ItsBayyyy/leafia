@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafia - Beranda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        leafia: {
+                            dark: '#033b32',   // Deepest green
+                            main: '#0f5142',   // Main brand green
+                            light: '#e8f5e9',  // Light green background
+                            yellow: '#facc15', // Accent yellow
+                            cream: '#fcfcfb',  // Off-white background
+                            gray: '#f3f4f6'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2813&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar hide for cleaner look in horizontal scroll if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-leafia-cream antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <img src="assets/img/logo/yellow.png" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                    <span class="font-bold text-xl tracking-tight text-leafia-yellow">Leafia</span>
+                </a>                
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Beranda</a>
+                    <a href="event.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
+                    <a href="edukasi.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Edukasi</a>
+                    <a href="pickup.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Kirim Sampah</a>
+                    <a href="marketplace.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Marketplace</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-3">
+                    <div class="flex items-center gap-2 bg-leafia-yellow text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-yellow/80 transition-colors">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
+                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/hero.jpg" alt="Nature background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
+        </div>
+
+        <!-- UPDATED: Added a container wrapper identical to the Navbar to ensure left-alignment matches Logo -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+            <div class="max-w-3xl">
+                
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-white text-xs font-semibold mb-6 border border-white/30">
+                    <i class="fa-solid fa-earth-asia"></i> Mari selamatkan bumi kita
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                    Bumi bukan warisan,<br/>tapi titipan untuk<br/>generasi berikutnya.
+                </h1>
+                
+                <!-- UPDATED: Removed mx-auto from paragraph -->
+                <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-xl font-light">
+                    Bergabung bersama kami menjaga kelestarian alam untuk masa depan yang lebih hijau.
+                </p>
+                
+                <!-- UPDATED: Changed justify-center to justify-start -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-start">
+                    <a href="#events" class="group bg-leafia-yellow text-leafia-dark px-8 py-3.5 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg flex items-center justify-center gap-2">
+                        Mulai Sekarang <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Bottom Fade -->
+        <!-- Brush Image Divider -->
+        <div class="absolute bottom-0 left-0 w-full h-22 bg-gradient-to-t to-transparent z-10">
+            <img 
+                src="assets/img/shape.webp" 
+                alt="brush divider" 
+                class="w-full h-auto object-cover select-none pointer-events-none"
+            >
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 px-4 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+    
+            <!-- LEFT: Images (Mobile = bawah, Desktop = kiri) -->
+            <div class="relative h-[500px] w-full max-w-[500px] mx-auto md:mr-auto order-2 md:order-1 md:sticky top-24">
+                <!-- Large Image -->
+                <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-[2rem] overflow-hidden shadow-2xl z-10">
+                    <img src="assets/img/about-1.png" 
+                         alt="Smiling volunteer" class="w-full h-full object-cover">
+                </div>
+    
+                <!-- Small Image -->
+                <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-leafia-cream z-20">
+                    <img src="assets/img/about-2.png" 
+                         alt="Planting trees" class="w-full h-full object-cover">
+                </div>
+    
+                <!-- Badge -->
+                <div class="absolute bottom-10 -right-4 bg-leafia-main text-white px-6 py-4 rounded-xl shadow-xl z-30">
+                    <div class="flex items-center gap-3">
+                        <div class="text-3xl font-bold text-leafia-yellow">10+</div>
+                        <div class="text-xs leading-tight font-medium">
+                            Tahun<br>Pengalaman
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Decorative Element -->
+                <div class="absolute top-10 left-0 text-leafia-yellow animate-bounce">
+                    <i class="fa-solid fa-sun text-4xl"></i>
+                </div>
+            </div>
+    
+            <!-- RIGHT: Text Content (Mobile = atas, Desktop = kanan) -->
+            <div class="order-1 md:order-2">
+                
+                <div class="flex items-center gap-2 text-leafia-main font-bold mb-4">
+                    <i class="fa-solid fa-seedling"></i>
+                    <span class="uppercase tracking-wider text-sm">Informasi Leafia</span>
+                </div>
+    
+                <h2 class="text-3xl md:text-5xl font-bold text-leafia-dark leading-tight mb-8">
+                    Solusi Digital untuk Pengelolaan Limbah.
+                </h2>
+                
+                <!-- Tab Navigation -->
+                <div class="flex space-x-6 border-b border-gray-200 mb-8 overflow-x-auto no-scrollbar">
+                    <button onclick="switchTab('about-us')" id="tab-about-us" 
+                        class="tab-btn pb-3 text-lg font-bold text-leafia-main border-b-4 border-leafia-main transition-colors whitespace-nowrap">
+                        Tentang Kami
+                    </button>
+                    <button onclick="switchTab('history')" id="tab-history" 
+                        class="tab-btn pb-3 text-lg font-bold text-gray-400 border-b-4 border-transparent hover:text-leafia-main transition-colors whitespace-nowrap">
+                        Sejarah
+                    </button>
+                    <button onclick="switchTab('vision')" id="tab-vision" 
+                        class="tab-btn pb-3 text-lg font-bold text-gray-400 border-b-4 border-transparent hover:text-leafia-main transition-colors whitespace-nowrap">
+                        Visi & Misi
+                    </button>
+                </div>
+    
+                <!-- Tab Contents -->
+                <div class="min-h-[300px]">
+                    
+                    <!-- Tab 1 -->
+                    <div id="content-about-us" class="tab-content block">
+                        <div class="grid grid-cols-3 gap-8 mb-8 py-2">
+                            <div>
+                                <h4 class="text-3xl font-bold text-leafia-main mb-1">2,000+</h4>
+                                <p class="text-gray-500 text-sm">Sampah Terolah</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-leafia-main mb-1">120+</h4>
+                                <p class="text-gray-500 text-sm">Komunitas</p>
+                            </div>
+                            <div>
+                                <h4 class="text-3xl font-bold text-leafia-main mb-1">50+</h4>
+                                <p class="text-gray-500 text-sm">Mitra Bank Sampah</p>
+                            </div>
+                        </div>
+    
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Leafia adalah platform yang fokus pada pengelolaan sampah organik: sisa makanan, sayur, buah, dan daun kering yang setiap hari ada di sekitar kita.
+                            Kami menghubungkan rumah tangga, komunitas, dan pelaku usaha dengan sistem pengolahan yang terarah.
+                        </p>
+    
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Berawal dari kebiasaan kecil memisahkan sampah di dapur, Leafia berkembang menjadi gerakan yang membantu mengurangi sampah ke TPA, menurunkan bau tak sedap, dan menghadirkan lebih banyak ruang hijau di lingkungan tempat kita tinggal.
+                        </p>
+                        
+                        <a href="#contact" class="group inline-flex items-center gap-2 text-leafia-main font-bold hover:text-leafia-yellow transition-colors mt-2">
+                            Hubungi Kami
+                            <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+    
+                    <!-- Tab 2 -->
+                    <div id="content-history" class="tab-content hidden">
+                        <div class="border-l-4 border-leafia-light pl-6 space-y-8">
+                            <div class="relative">
+                                <span class="absolute -left-[2.1rem] top-1 w-4 h-4 rounded-full bg-leafia-yellow border-4 border-white shadow-sm"></span>
+                                <h4 class="text-xl font-bold text-leafia-dark mb-1">2015: Benih Ditanam</h4>
+                                <p class="text-gray-600 text-sm">Bermula dari inisiatif kecil di garasi rumah pendiri kami yang resah dengan tumpukan sampah pasar tradisional yang tidak terkelola dengan baik.</p>
+                            </div>
+    
+                            <div class="relative">
+                                <span class="absolute -left-[2.1rem] top-1 w-4 h-4 rounded-full bg-leafia-main border-4 border-white shadow-sm"></span>
+                                <h4 class="text-xl font-bold text-leafia-dark mb-1">2018: Komunitas Tumbuh</h4>
+                                <p class="text-gray-600 text-sm">Membentuk "Komunitas Leafia" pertama yang beranggotakan 50 relawan aktif untuk melakukan edukasi door-to-door tentang pemilahan sampah organik.</p>
+                            </div>
+    
+                            <div class="relative">
+                                <span class="absolute -left-[2.1rem] top-1 w-4 h-4 rounded-full bg-leafia-main border-4 border-white shadow-sm"></span>
+                                <h4 class="text-xl font-bold text-leafia-dark mb-1">2021: Transformasi Digital</h4>
+                                <p class="text-gray-600 text-sm">Meluncurkan platform digital (website) untuk memudahkan penjemputan sampah dan memberikan reward poin kepada pengguna.</p>
+                            </div>
+    
+                            <div class="relative">
+                                <span class="absolute -left-[2.1rem] top-1 w-4 h-4 rounded-full bg-leafia-main border-4 border-white shadow-sm"></span>
+                                <h4 class="text-xl font-bold text-leafia-dark mb-1">2024: Ekosistem Hijau</h4>
+                                <p class="text-gray-600 text-sm">Kini telah bermitra dengan lebih dari 50 Bank Sampah dan mengelola ribuan ton limbah organik setiap tahunnya.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Tab 3 -->
+                    <div id="content-vision" class="tab-content hidden">
+                        
+                        <div class="bg-leafia-light/50 p-6 rounded-2xl border border-leafia-main/10 mb-6">
+                            <h3 class="flex items-center gap-2 text-xl font-bold text-leafia-dark mb-3">
+                                <i class="fa-solid fa-eye text-leafia-main"></i> Visi Kami
+                            </h3>
+                            <p class="text-gray-700 italic font-medium">
+                                "Mewujudkan Indonesia yang bersih, sehat, dan mandiri energi melalui pengelolaan limbah organik yang cerdas dan berkelanjutan pada tahun 2030."
+                            </p>
+                        </div>
+    
+                        <div>
+                            <h3 class="flex items-center gap-2 text-xl font-bold text-leafia-dark mb-4">
+                                <i class="fa-solid fa-bullseye text-leafia-main"></i> Misi Kami
+                            </h3>
+    
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <div class="bg-leafia-yellow text-leafia-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">1</div>
+                                    <p class="text-gray-600 text-sm leading-relaxed"><strong>Edukasi Berkelanjutan:</strong> Meningkatkan kesadaran masyarakat tentang pentingnya memilah sampah sejak dari sumbernya.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="bg-leafia-yellow text-leafia-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">2</div>
+                                    <p class="text-gray-600 text-sm leading-relaxed"><strong>Teknologi Tepat Guna:</strong> Mengembangkan sistem digital yang efisien untuk mempermudah proses pengumpulan dan pelacakan dampak lingkungan.</p>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="bg-leafia-yellow text-leafia-dark w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">3</div>
+                                    <p class="text-gray-600 text-sm leading-relaxed"><strong>Pemberdayaan Ekonomi:</strong> Mengubah limbah menjadi produk bernilai ekonomi (kompos, pakan ternak, biogas) yang mensejahterakan mitra pengelola.</p>
+                                </li>
+                            </ul>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+    
+
+    <!-- Process Section -->
+    <section class="bg-gradient-to-b from-[#f9fdfa] to-white py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span class="uppercase tracking-wider text-sm">Cara Kerja</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark">Bagaimana Leafia Bekerja?</h2>
+                <p class="text-gray-500 mt-4">Tiga langkah untuk mulai mengelola sampah organik!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <span class="text-4xl font-bold text-gray-100">01</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3">Daftar & Buat Profil</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Buat akun, pilih apakah kamu pengguna rumah tangga, komunitas, atau usaha kecil. Dari sini kamu bisa atur jadwal dan melihat jejak kontribusimu.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Mudah & Cepat</li>
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Aman & Terjamin</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <span class="text-4xl font-bold text-gray-100">02</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3">Pisahkan & Kumpulkan</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Pisahkan sampah organik di rumah: sisa makanan, sayur, buah, dan daun. Simpan di wadah khusus sesuai panduan dari Leafia Organik.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Beragam Event</li>
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Panduan Lengkap</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <span class="text-4xl font-bold text-gray-100">03</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3">Kirim & Olah Jadi Manfaat</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Kirim sampah organik ke titik pengumpulan atau mitra pengolah. Sampahmu diubah menjadi kompos dan pupuk, sementara kamu mendapatkan poin dan laporan dampak.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Sertifikat</li>
+                        <li class="flex items-center gap-2 text-xs text-gray-600"><i class="fa-solid fa-check text-leafia-main"></i> Merchandise</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                 <a href="#" class="group bg-leafia-yellow text-leafia-dark px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg inline-flex items-center gap-2">
+                    Mulai Kontribusi <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
+                <i class="fa-solid fa-image"></i>
+                <span class="uppercase tracking-wider text-sm">Dokumentasi</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark mb-2">Galeri Aksi</h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Setiap foto adalah langkah kecil yang membantu mengurangi sampah <br> organik dan menghadirkan lebih banyak ruang hijau.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1 -->
+            <div onclick="openModal(this)" 
+                 data-title="Belajar Pengolahan Sampah Organik" 
+                 data-description="Anak muda sedang belajar bersama di ruang edukasi ramah lingkungan, mempelajari kompos dan praktik pengolahan sampah organik dengan suasana hangat dan alami."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/gallery-1.png" alt="Belajar Pengolahan Sampah Organik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Belajar Pengolahan Sampah Organik</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+             <!-- Item 2 -->
+             <div onclick="openModal(this)" 
+                 data-title="Aksi Pengumpulan Sampah Organik di Lingkungan Warga" 
+                 data-description="Mengumpulkan sampah organik dari warga menggunakan wadah daur ulang, menciptakan suasana ramah dan bersih di area permukiman tropis."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/galleri-2.png" alt="Aksi Pengumpulan Sampah Organik di Lingkungan Warga" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Aksi Pengumpulan Sampah Organik di Lingkungan Warga</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+             <!-- Item 3 -->
+             <div onclick="openModal(this)" 
+                 data-title="Mengolah Sampah Organik Menjadi Kompos" 
+                 data-description="Mencampur daun kering dan sisa makanan di kotak kompos kayu, menghadirkan suasana tenang dan sadar lingkungan."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/gallery-3.png" alt="Mengolah Sampah Organik Menjadi Kompos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Mengolah Sampah Organik Menjadi Kompos</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+             <!-- Item 4 -->
+             <div onclick="openModal(this)" 
+                 data-title="Menanam Sayuran dengan Kompos Buatan Sendiri" 
+                 data-description="Kelompok remaja menanam sayuran di kebun kecil perkotaan menggunakan kompos yang mereka buat sendiri."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/gallery-4.png" alt="Menanam Sayuran dengan Kompos Buatan Sendiri" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Menanam Sayuran dengan Kompos Buatan Sendiri</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+             <!-- Item 5 -->
+             <div onclick="openModal(this)" 
+                 data-title="Belajar Memilah Sampah Organik dengan Benar" 
+                 data-description="Para peserta muda mengikuti sesi edukasi pemilahan sampah organik."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/gallery-5.png" alt="Belajar Memilah Sampah Organik dengan Benar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Belajar Memilah Sampah Organik dengan Benar</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+             <!-- Item 6 -->
+             <div onclick="openModal(this)" 
+                 data-title="Aksi Kampanye Kurangi Sampah Organik" 
+                 data-description="Mengajak masyarakat peduli lingkungan melalui pesan ramah tampilan di area taman tropis."
+                 class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <img src="assets/img/gallery-6.png" alt="Aksi Kampanye Kurangi Sampah Organik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <p class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Aksi Kampanye Kurangi Sampah Organik</p>
+                    <p class="text-gray-300 text-xs mt-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Klik untuk melihat detail</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 px-4 max-w-7xl mx-auto bg-gray-50 rounded-[3rem]">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <div class="flex items-center gap-2 text-leafia-main font-bold mb-3">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span class="uppercase tracking-wider text-sm">Jadwal Terdekat</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark">Berpartisipasi dalam Event</h2>
+            </div>
+            <a href="event.html" class="group bg-leafia-yellow text-leafia-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-300 transition-colors shadow-md">
+                Lihat Semua Event <i class="fa-solid fa-arrow-right ml-1 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Event Card 1 (Refined to match event.html) -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-1.jpg" alt="Teknik Komposting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 20 Nov 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Pantai Ancol
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Teknik Komposting Skala Rumah Tangga
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Pelatihan intensif cara mengolah sisa makanan menjadi pupuk menggunakan metode Takakura.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +300 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Tim Leafia Jakarta</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 2 (Refined to match event.html) -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-2.jpg" alt="Manajemen Sampah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 05 Des 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Pulau Pari
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Manajemen Sampah Organik Digital
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Diskusi daring mengenai peran teknologi dalam efisiensi sistem pengelolaan sampah kota yang berkelanjutan.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +100 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Komunitas Digital</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 3 (Refined to match event.html) -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="assets/img/event/event-3.jpg" alt="Aksi Bersih" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex gap-2 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-leafia-main text-white gap-1.5">
+                            <i class="fa-regular fa-calendar"></i> 12 Des 2025
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-md text-[10px] font-bold bg-yellow-100 text-yellow-800 gap-1.5">
+                            <i class="fa-solid fa-location-dot"></i> Bandung
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-3 leading-tight group-hover:text-leafia-main transition-colors">
+                        Aksi Bersih & Edukasi Warga
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-3">
+                        Kegiatan lapangan untuk mensosialisasikan penggunaan aplikasi pengolahan sampah kepada masyarakat luas.
+                    </p>
+                    
+                    <div class="mt-auto space-y-4">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-yellow-50 text-yellow-700 text-xs font-bold border border-yellow-100">
+                            <i class="fa-solid fa-leaf text-yellow-500"></i> +200 Poin untuk Partisipasi
+                        </div>
+
+                        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Organizer" class="w-8 h-8 rounded-full">
+                            <span class="text-xs font-semibold text-gray-600">Relawan Bandung</span>
+                        </div>
+                        
+                        <a href="detail.html" class="group flex justify-center gap-1 text-center inline-block w-full bg-leafia-main hover:bg-leafia-dark text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                            Lihat Detail
+                            <i class="bx bx-arrow-up-right text-[1.5em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                 <div class="flex items-center gap-2 text-leafia-main font-bold mb-3">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span class="uppercase tracking-wider text-sm">FAQ</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-gray-500 mb-8">Temukan jawaban untuk pertanyaan umum tentang cara bergabung dan berkontribusi di Leafia.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-2xl p-4 md:p-6 transition-all hover:border-leafia-main group">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-leafia-dark text-lg">
+                            <span>Leafia Organik itu apa?</span>
+                            <span class="transition transition-transform duration-300 group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-leafia-main"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 transition-transform duration-300 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                            Leafia adalah platform yang membantu kamu mengelola sampah organik, menghubungkanmu dengan mitra pengolah, dan memberikan poin atas setiap kontribusi yang kamu lakukan.
+                        </div>
+                    </details>
+                </div>
+                 <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-2xl p-4 md:p-6 transition-all hover:border-leafia-main group">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-leafia-dark text-lg">
+                            <span>Sampah apa saja yang bisa saya kirim?</span>
+                            <span class="transition transition-transform duration-300 group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-leafia-main"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 transition-transform duration-300 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                            Kamu bisa mengirim sisa makanan, sayur, buah, ampas kopi, dan daun kering. Kami akan memberikan panduan lengkap tentang apa yang boleh dan tidak boleh dikumpulkan.
+                        </div>
+                    </details>
+                </div>
+                 <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-2xl p-4 md:p-6 transition-all hover:border-leafia-main group">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-leafia-dark text-lg">
+                            <span>Bagaimana cara saya mendapatkan poin?</span>
+                            <span class="transition transition-transform duration-300 group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-leafia-main"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 transition-transform duration-300 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                            Poin didapat dari setiap pengiriman sampah organik, keikut sertaan dalam event, dan aktivitas lain yang mendukung pengelolaan sampah organik.
+                        </div>
+                    </details>
+                </div>
+                 <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-2xl p-4 md:p-6 transition-all hover:border-leafia-main group">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-leafia-dark text-lg">
+                            <span>Apakah saya mendapat sertifikat?</span>
+                            <span class="transition transition-transform duration-300 group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-leafia-main"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-600 transition-transform duration-300 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                            Ya, setiap partisipasi dalam event akan mendapatkan e-sertifikat yang bisa diunduh melalui dashboard akun anda.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 px-4 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
+                <i class="fa-solid fa-users"></i>
+                <span class="uppercase tracking-wider text-sm">Tim Kami</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark">Orang-Orang dibalik Leafia</h2>
+            <p class="text-gray-500 mt-4">Berdedikasi penuh untuk menciptakan perubahan positif.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Team 1 -->
+            <div class="text-center group">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
+                    <img src="assets/img/team-1.png" alt="Team" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold text-leafia-dark">Wiranata Putra</h3>
+                <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
+            </div>
+             <!-- Team 2 -->
+             <div class="text-center group">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
+                    <img src="assets/img/team-2.png" alt="Team" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold text-leafia-dark">Arindika Wijaya</h3>
+                <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
+            </div>
+             <!-- Team 3 -->
+             <div class="text-center group">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
+                    <img src="assets/img/team-3.png" alt="Team" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold text-leafia-dark">Luh Kirana</h3>
+                <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
+            </div>
+             <!-- Team 4 -->
+             <div class="text-center group">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
+                    <img src="assets/img/team-4.png" alt="Team" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold text-leafia-dark">Ayu Wardani</h3>
+                <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section id="contact" class="py-20 px-4 max-w-7xl mx-auto mb-10">
+        <div class="grid md:grid-cols-2 gap-12 bg-[#f9fdfa] rounded-[3rem] p-8 md:p-12 border border-gray-100 shadow-sm">
+            <!-- Left: Contact Info Buttons -->
+            <div>
+                <h3 class="text-3xl font-bold text-leafia-dark mb-2">Hubungi Kami</h3>
+                <p class="text-gray-500 mb-8">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu menghubungi kami.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <!-- Phone -->
+                    <div class="bg-leafia-main text-white p-4 rounded-xl flex items-center gap-4 hover:bg-leafia-dark transition-colors cursor-pointer">
+                        <div class="bg-white/20 px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-phone text-leafia-yellow"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-300">Telepon</p>
+                            <p class="font-bold">+62 812 3456 7890</p>
+                        </div>
+                    </div>
+                     <!-- Email -->
+                     <div class="bg-leafia-main text-white p-4 rounded-xl flex items-center gap-4 hover:bg-leafia-dark transition-colors cursor-pointer">
+                        <div class="bg-white/20 px-3 py-2 rounded-lg">
+                            <i class="fa-solid fa-envelope text-leafia-yellow"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-300">Email</p>
+                            <p class="font-bold">halo@leafia.id</p>
+                        </div>
+                    </div>
+                     <!-- Location -->
+                     <div class="bg-leafia-main text-white p-4 rounded-xl flex items-center gap-4 hover:bg-leafia-dark transition-colors cursor-pointer col-span-1 md:col-span-2">
+                        <div class="bg-white/20 px-[0.9em] py-2 rounded-lg">
+                            <i class="fa-solid fa-location-dot text-leafia-yellow"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-300">Kantor Utama</p>
+                            <p class="font-bold">Jl. Hijau Lestari No. 88, Jakarta Selatan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-leafia-dark mb-4">Media Sosial</h4>
+                <div class="flex gap-3">
+                     <a href="#" class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-leafia-main hover:bg-leafia-main hover:text-white transition-all"><i class="fa-brands fa-instagram text-xl"></i></a>
+                     <a href="#" class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-leafia-main hover:bg-leafia-main hover:text-white transition-all"><i class="fa-brands fa-twitter text-xl"></i></a>
+                     <a href="#" class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-leafia-main hover:bg-leafia-main hover:text-white transition-all"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                <h4 class="font-bold text-xl text-leafia-dark mb-6">Kirim Pesan</h4>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-leafia-main/50 bg-gray-50" placeholder="Masukkan nama anda">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-leafia-main/50 bg-gray-50" placeholder="nama@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                        <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-leafia-main/50 bg-gray-50" placeholder="Tulis pesan anda disini..."></textarea>
+                    </div>
+                    <button class="group w-full bg-leafia-main text-white py-3 rounded-xl font-semibold hover:bg-leafia-dark transition-all flex items-center justify-center gap-0 hover:gap-2">
+                        Kirim Pesan
+                        <i class="bx bx-paper-plane text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal (Added at the end of body) -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop"></div>
+
+        <!-- Modal Panel Wrapper - Added onclick to close modal on empty space click -->
+        <div class="fixed inset-0 z-10 overflow-y-auto" onclick="closeModal()">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                
+                <!-- Modal Panel - Added stopPropagation to prevent closing when clicking content -->
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-4xl opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" id="modalPanel" onclick="event.stopPropagation()">
+                    
+                    <!-- Close Button -->
+                    <button type="button" onclick="closeModal()" class="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors focus:outline-none">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+
+                    <div class="flex flex-col md:flex-row">
+                        <!-- Image Container -->
+                        <div class="w-full md:w-2/3 h-64 md:h-[500px] bg-gray-100 relative">
+                            <img id="modalImage" src="" alt="Detail Gallery" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Content Container -->
+                        <div class="w-full md:w-1/3 p-8 flex flex-col justify-center bg-white relative">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-leafia-yellow to-leafia-main md:w-1 md:h-full md:bg-gradient-to-b"></div>
+                            
+                            <div class="mb-4">
+                                <span class="inline-block px-3 py-1 bg-leafia-light text-leafia-main text-xs font-bold rounded-full mb-3">
+                                    Dokumentasi Kegiatan
+                                </span>
+                                <h3 class="text-2xl font-bold text-leafia-dark leading-tight" id="modalTitle">Judul Kegiatan</h3>
+                            </div>
+                            
+                            <p class="text-gray-600 leading-relaxed text-sm mb-6" id="modalDescription">
+                                Deskripsi kegiatan akan muncul disini.
+                            </p>
+
+                            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
+                                    <img src="assets/img/logo/green.png" class="w-full h-full object-cover p-1">
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-leafia-dark">Leafia Official</p>
+                                    <p class="text-[10px] text-gray-400 flex items-center gap-1">
+                                        <i class="bx bxs-check-circle text-blue-500 text-[12px]"></i>
+                                        Verified Organizer
+                                    </p>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative bg-leafia-dark text-white pt-16 pb-8 overflow-hidden mt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/footer.png" 
+                 alt="Footer Background" 
+                 class="w-full h-full object-cover opacity-100">
+        </div>
+    
+        <!-- Overlay Hijau -->
+        <div class="absolute inset-0 bg-leafia-main/95 -z-1"></div>
+    
+        <!-- Footer Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo/yellow.png" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-2xl tracking-tight text-leafia-yellow">Leafia</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        Platform inovatif mengelola sampah organik menuju lingkungan bersih dan berkelanjutan untuk generasi mendatang.
+                    </p>
+                </div>
+    
+                <!-- Links 1 -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Tautan Cepat</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="index.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Beranda</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event</a></li>
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kirim Sampah</a></li>
+                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Services -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Layanan</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Jemput Kompos</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pelatihan Maggot</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Bank Sampah</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Konsultasi</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i>
+                            <span>Markas Kompos, Jl. Lestari No. 88<br>Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-leafia-yellow"></i>
+                            <span>+62-812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-leafia-yellow"></i>
+                            <span>halo@leafia.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-300">
+                &copy; 2025 Leafia. Dikelola oleh Komunitas Leafia.
+            </div>
+        </div>
+    </footer>    
+
+    <script>
+        const navbar = document.getElementById('navbar');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-leafia-main', 'shadow-md');
+            } else {
+                navbar.classList.remove('bg-leafia-main', 'shadow-md');
+            }
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('block');
+            });
+
+            // Show selected content
+            const selectedContent = document.getElementById('content-' + tabName);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+                selectedContent.classList.add('block');
+            }
+
+            // Update button styles
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                // Reset to inactive state
+                btn.classList.remove('text-leafia-main', 'border-leafia-main');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            // Set active state for clicked button
+            const activeBtn = document.getElementById('tab-' + tabName);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-gray-400', 'border-transparent');
+                activeBtn.classList.add('text-leafia-main', 'border-leafia-main');
+            }
+        }
+
+        // --- MODAL LOGIC START ---
+        const modal = document.getElementById('imageModal');
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const modalPanel = document.getElementById('modalPanel');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+
+        function openModal(element) {
+            // Get data from clicked element
+            const imgSrc = element.querySelector('img').src;
+            const title = element.getAttribute('data-title');
+            const desc = element.getAttribute('data-description');
+
+            // Set content
+            modalImage.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDescription.textContent = desc;
+
+            // Show modal container
+            modal.classList.remove('hidden');
+
+            // Trigger reflow for animation
+            void modal.offsetWidth;
+
+            // Animate in
+            modalBackdrop.classList.remove('opacity-0');
+            modalPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            modalPanel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            // Animate out
+            modalBackdrop.classList.add('opacity-0');
+            modalPanel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+            modalPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+
+            // Wait for transition to finish before hiding
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scroll
+                modalImage.src = ''; // Clear image
+            }, 300); // Match transition duration
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+        // --- MODAL LOGIC END ---
+    </script>    
+</body>
+</html>

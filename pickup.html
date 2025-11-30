@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafia - Pickup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        leafia: {
+                            dark: '#033b32',   // Deepest green
+                            main: '#0f5142',   // Main brand green
+                            light: '#e8f5e9',  // Light green background
+                            yellow: '#facc15', // Accent yellow
+                            cream: '#fcfcfb',  // Off-white background
+                            gray: '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="text-leafia-main text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                    <span class="font-bold text-xl tracking-tight text-leafia-dark">Leafia</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
+                    <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
+                    <a href="edukasi.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Edukasi</a>
+                    <a href="pickup.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Kirim Sampah</a>
+                    <a href="marketplace.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Marketplace</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="hidden md:flex items-center gap-3">
+                    <div class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-dark transition-colors">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
+                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <nav class="flex mb-12 text-sm text-gray-500 font-medium">
+            <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-leafia-main font-bold">Kirim Sampah</span>
+        </nav>
+
+        <div class="grid md:grid-cols-2 gap-16 mb-24 items-center">
+            <div class="relative h-[600px] w-full max-w-[500px] mx-auto md:mr-auto hidden md:block">
+                <div class="absolute top-0 left-0 w-4/5 h-3/5 rounded-[2rem] overflow-hidden shadow-xl z-10">
+                    <img src="assets/img/pickup/pickup-1.png" alt="Courier" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute bottom-0 right-0 w-4/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white z-20">
+                     <img src="assets/img/pickup/pickup-2.png" alt="Recycling" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute top-10 -right-4 bg-leafia-yellow text-leafia-dark px-6 py-3 rounded-full shadow-lg z-30 font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Super Cepat
+                </div>
+                <div class="absolute bottom-20 -left-4 bg-leafia-dark text-white px-6 py-4 rounded-xl shadow-xl z-30">
+                    <div class="flex items-center gap-3">
+                        <div class="text-3xl font-bold text-leafia-yellow">50+</div>
+                        <div class="text-xs leading-tight font-medium">Pengirim<br>Setiap Hari</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center gap-2 text-leafia-main font-bold mb-4">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span class="uppercase tracking-wider text-sm">Pickup Sampah</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-leafia-dark leading-tight mb-4">
+                    Kirim Foto, Pilih Kurir,<br>Sampahmu Dijemput!
+                </h1>
+                <p class="text-gray-500 mb-8 leading-relaxed">
+                    Dengan satu langkah kecil, kamu membantu menjaga kebersihan lingkungan dan masa depan bumi.
+                </p>
+                
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" class="w-full bg-leafia-gray border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-leafia-main outline-none text-gray-700 placeholder-gray-400" placeholder="Alamat Lengkap">
+                    </div>
+                    
+                    <!-- PERBAIKAN: Mengubah div menjadi label agar bisa diklik -->
+                    <label class="block bg-leafia-gray rounded-xl p-8 text-center border-2 border-dashed border-gray-300 hover:border-leafia-main transition-colors cursor-pointer group hover:bg-gray-50">
+                        <!-- Input file tersembunyi yang akan dipicu oleh label -->
+                        <input type="file" id="file-upload" class="hidden" onchange="updateFileName(this)">
+                        
+                        <div class="flex flex-col items-center justify-center gap-3">
+                            <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-400 group-hover:text-leafia-main transition-colors"></i>
+                            <h4 class="font-bold text-leafia-dark">Upload Gambar Sampah</h4>
+                            <div class="flex items-center gap-3">
+                                <span class="bg-leafia-dark text-white text-xs px-3 py-1.5 rounded-lg font-bold">Choose File</span>
+                                <span id="file-name-display" class="text-xs text-gray-400 italic">No file chosen</span>
+                            </div>
+                        </div>
+                    </label>
+                    
+                    <div class="relative">
+                        <select class="w-full bg-leafia-gray border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-leafia-main outline-none text-gray-700 appearance-none cursor-pointer">
+                            <option>-- Pilih Kurir --</option>
+                            <option>Leafia Express</option>
+                            <option>Gojek / Grab</option>
+                            <option>Kurir Lokal</option>
+                        </select>
+                         <div class="absolute inset-y-0 right-0 flex items-center px-6 pointer-events-none text-gray-500">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="button" onclick="openSuccessModal()" class="bg-leafia-yellow text-leafia-dark px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg inline-flex items-center gap-2 w-full md:w-auto justify-center">
+                        Pickup Sampah <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span class="uppercase tracking-wider text-sm">Dropoff Sampah</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-leafia-dark">Lokasi Drop Point Terdekat</h2>
+            <p class="text-gray-500 mt-4">Temukan lokasi terdekat untuk mengantar sampah Anda</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Melati</h3>
+                    <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">2.5 km</span>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-leafia-main mt-1"></i>
+                        Jl. Melati Raya No. 10, Gambir
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-regular fa-clock text-leafia-main mt-1"></i>
+                        08:00 - 17:00 (Sen - Sab)
+                    </li>
+                </ul>
+            </div>
+             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Sejahtera</h3>
+                    <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">4.8 km</span>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-leafia-main mt-1"></i>
+                        Jl. Sukajadi No. 120, Bandung
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-regular fa-clock text-leafia-main mt-1"></i>
+                        09:00 - 16:00 (Sen - Jum)
+                    </li>
+                </ul>
+            </div>
+             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Bahari</h3>
+                    <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">1.1 km</span>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-500">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-leafia-main mt-1"></i>
+                        Jl. Taman Bungkul No. 7, Surabaya
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-regular fa-clock text-leafia-main mt-1"></i>
+                        07:30 - 15:30 (Sen - Sab)
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden shadow-sm border border-gray-200 h-[400px] w-full bg-gray-100">
+            <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.4878845067!2d106.68942964687502!3d-6.229728025238562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Special%20Capital%20Region%20of%20Jakarta!5e0!3m2!1sen!2sid!4v1709283728372!5m2!1sen!2sid" 
+               width="100%" 
+               height="100%" 
+               style="border:0;" 
+               allowfullscreen="" 
+               loading="lazy" 
+               referrerpolicy="no-referrer-when-downgrade"
+               title="Google Maps Location">
+           </iframe>
+       </div>
+
+    </main>
+
+    <div id="successModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeSuccessModal()"></div>
+
+        <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row h-full md:h-[900px]">
+            
+            <div class="hidden md:flex w-5/12 bg-leafia-dark text-white p-10 flex-col  relative overflow-hidden">
+                
+                <i class="fa-solid fa-leaf absolute -bottom-16 -left-16 text-[18rem] text-white/5 rotate-12 pointer-events-none z-0"></i>
+                
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-leafia-yellow/10 rounded-full blur-xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/10 shadow-inner mx-auto md:mx-0">
+                        <i class="fa-solid fa-check text-4xl text-white"></i>
+                    </div>
+                    
+                    <h2 class="text-3xl font-bold mb-2 text-center md:text-left">Berhasil Memproses!</h2>
+                    <p class="text-gray-300 text-sm mb-8 text-center md:text-left">Pickup sampah Anda telah terjadwal</p>
+
+                    <div class="space-y-5 text-sm font-medium">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-solid fa-truck-fast text-xs"></i>
+                            </div>
+                            <span>Kurir profesional dan terpercaya</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-regular fa-clock text-xs"></i>
+                            </div>
+                            <span>Pickup tepat waktu</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-solid fa-leaf text-xs"></i>
+                            </div>
+                            <span>Kontribusi untuk lingkungan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-7/12 bg-white flex flex-col h-full">
+                
+                <div class="px-8 py-5 border-b border-gray-100 flex justify-between items-center bg-white z-20 shrink-0">
+                    <h3 class="font-bold text-leafia-dark text-xl">Detail Pickup</h3>
+                    <button onclick="closeSuccessModal()" class="text-gray-400 hover:text-red-500 p-1 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex-grow overflow-y-auto p-8 space-y-6 custom-scrollbar">
+                    
+                    <div class="bg-[#f9fafb] rounded-2xl p-6 space-y-4 border border-gray-100">
+                        <div class="flex gap-4">
+                            <div class="mt-1 text-leafia-dark"><i class="fa-solid fa-map-location-dot text-xl"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Alamat Pickup</p>
+                                <p class="text-sm font-bold text-gray-800">Jl. Melati Raya No. 45, Jakarta Pusat</p>
+                            </div>
+                        </div>
+                        <hr class="border-gray-200">
+                        <div class="flex gap-4">
+                            <div class="mt-1 text-leafia-dark"><i class="fa-solid fa-truck text-xl"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Kurir</p>
+                                <p class="text-sm font-bold text-gray-800">Leafia Express</p>
+                            </div>
+                        </div>
+                        <hr class="border-gray-200">
+                        <div class="flex gap-4">
+                            <div class="mt-1 text-leafia-dark"><i class="fa-regular fa-clock text-xl"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Estimasi Kedatangan</p>
+                                <p class="text-sm font-bold text-leafia-main">10-20 menit</p>
+                            </div>
+                        </div>
+                         <hr class="border-gray-200">
+                        <div class="flex gap-4">
+                            <div class="mt-1 text-leafia-dark"><i class="fa-solid fa-dollar-sign text-xl"></i></div>
+                            <div>
+                                <p class="text-xs text-gray-400 mb-1">Biaya Ongkir</p>
+                                <p class="text-sm font-bold text-gray-800">Rp. 5.000,00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                         <h4 class="font-bold text-leafia-dark mb-3 text-sm">Reward Anda</h4>
+                        <div class="bg-yellow-50 border border-yellow-100 rounded-2xl p-4 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-leafia-yellow rounded-full flex items-center justify-center text-leafia-dark">
+                                <i class="fa-solid fa-leaf text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Poin yang akan didapat</p>
+                                <p class="text-2xl font-bold text-leafia-dark">+50 Poin</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-2xl p-4 bg-white">
+                        <div class="flex items-center gap-2 mb-2 text-leafia-dark">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <h4 class="font-bold text-sm">Mohon Diperhatikan:</h4>
+                        </div>
+                        <ul class="list-disc list-inside text-xs text-gray-500 space-y-1 ml-1">
+                            <li>Pastikan sampah sudah dipilah dengan benar</li>
+                            <li>Siapkan sampah di lokasi yang mudah dijangkau</li>
+                            <li>Kurir akan menghubungi Anda saat tiba</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="p-6 border-t border-gray-100 bg-white shrink-0 text-center">
+                    <button onclick="closeSuccessModal()" class="w-full py-3.5 rounded-full border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 mb-4">
+                        <i class="fa-solid fa-arrow-left"></i> Kembali
+                    </button>
+                    <p class="text-xs text-gray-400 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Butuh bantuan? Hubungi: +62-361-123-4567
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="relative bg-leafia-dark text-white pt-16 pb-8 overflow-hidden mt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/footer.png" 
+                 alt="Footer Background" 
+                 class="w-full h-full object-cover opacity-100">
+        </div>
+    
+        <!-- Overlay Hijau -->
+        <div class="absolute inset-0 bg-leafia-main/95 -z-1"></div>
+    
+        <!-- Footer Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="assets/img/logo/yellow.png" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-2xl tracking-tight text-leafia-yellow">Leafia</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        Platform inovatif mengelola sampah organik menuju lingkungan bersih dan berkelanjutan untuk generasi mendatang.
+                    </p>
+                </div>
+    
+                <!-- Links 1 -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Tautan Cepat</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="index.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Beranda</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event</a></li>
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kirim Sampah</a></li>
+                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Services -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Layanan</h5>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Jemput Kompos</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pelatihan Maggot</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Bank Sampah</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Konsultasi</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact -->
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i>
+                            <span>Markas Kompos, Jl. Lestari No. 88<br>Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-leafia-yellow"></i>
+                            <span>+62-812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-leafia-yellow"></i>
+                            <span>halo@leafia.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-300">
+                &copy; 2025 Leafia. Dikelola oleh Komunitas Leafia.
+            </div>
+        </div>
+    </footer>   
+
+    <script>
+        const successModal = document.getElementById('successModal');
+
+        function openSuccessModal() {
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+        }
+
+        function closeSuccessModal() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+        }
+
+        function updateFileName(input) {
+            const fileNameDisplay = document.getElementById('file-name-display');
+            if (input.files && input.files.length > 0) {
+                let name = input.files[0].name;
+                if(name.length > 20) name = name.substring(0, 17) + '...';
+                
+                fileNameDisplay.textContent = name;
+                fileNameDisplay.classList.remove('text-gray-400', 'italic');
+                fileNameDisplay.classList.add('text-leafia-dark', 'font-medium');
+            } else {
+                fileNameDisplay.textContent = 'No file chosen';
+                fileNameDisplay.classList.add('text-gray-400', 'italic');
+                fileNameDisplay.classList.remove('text-leafia-dark', 'font-medium');
+            }
+        }
+    </script>
+
+</body>
+</html>

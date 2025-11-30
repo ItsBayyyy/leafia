@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafia - Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        leafia: {
+                            dark: '#033b32',   // Deepest green
+                            main: '#0f5142',   // Main brand green
+                            light: '#e8f5e9',  // Light green background
+                            yellow: '#facc15', // Accent yellow
+                            cream: '#fcfcfb',  // Off-white background
+                            gray: '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-12">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="text-leafia-main text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                    <span class="font-bold text-xl tracking-tight text-leafia-dark">Leafia</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="hover:text-leafia-main transition-colors">Beranda</a>
+                    <a href="events.html" class="hover:text-leafia-main transition-colors">Event</a>
+                    <a href="edukasi.html" class="hover:text-leafia-main transition-colors">Edukasi</a>
+                    <a href="pickup.html" class="hover:text-leafia-main transition-colors">Kirim Sampah</a>
+                    <a href="marketplace.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Marketplace</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-3">
+                    <div class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-dark transition-colors">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
+                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <nav class="flex mb-8 text-sm text-gray-500 font-medium">
+            <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
+            <span class="mx-2">/</span>
+            <span class="text-leafia-main font-bold">Toko Lingkungan</span>
+        </nav>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-10">
+            <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" 
+                    class="block w-full pl-11 pr-4 py-4 bg-[#fcfcfb] border border-gray-100 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-leafia-main/20 focus:border-leafia-main transition-all" 
+                    placeholder="Cari komposter, pupuk cair, atau maggot...">
+            </div>
+            
+            <div class="relative min-w-[200px]">
+                <select class="appearance-none block w-full pl-4 pr-10 py-4 bg-[#fcfcfb] border border-gray-100 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-leafia-main/20 focus:border-leafia-main cursor-pointer">
+                    <option>Semua Kategori</option>
+                    <option>Alat Komposter</option>
+                    <option>Pupuk & Media Tanam</option>
+                    <option>Starter Bakteri</option>
+                    <option>Pakan Ternak (Maggot)</option>
+                    <option>Produk Eco-Enzyme</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Komposter Ember" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
+                        <i class="fa-solid fa-fire mr-1"></i> Best Seller
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                    <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-box"></i> Alat
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">
+                            <i class="fa-solid fa-recycle"></i> Daur Ulang
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Paket Komposter Ember Tumpuk
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Alat pengolah sampah dapur menjadi Pupuk Organik Cair (POC) dan padat. Dilengkapi kran panen dan saringan anti lalat.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 150.000</span>
+                                <span class="text-xs text-gray-400 line-through">Rp 180.000</span>
+                            </div>
+                            <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 300 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.9
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Paket Komposter Ember Tumpuk', '150.000', '300', 'https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" 
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pupuk Cair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                      <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-flask"></i> Pupuk
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                            <i class="fa-solid fa-droplet"></i> Cair
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Pupuk Organik Cair (POC) 1 Liter
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Hasil fermentasi limbah buah dan sayur murni. Kaya nutrisi mikro untuk menyuburkan tanaman hias dan sayuran di rumah.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 15.000</span>
+                            </div>
+                             <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 30 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.7
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Pupuk Organik Cair (POC)', '15.000', '30', 'https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1628103855018-b2a632824e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EM4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                      <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-vial"></i> Starter
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Bio-Aktivator Pengurai Sampah
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Bakteri starter aktif untuk mempercepat proses pengomposan sampah dapur agar tidak membusuk dan menimbulkan bau tidak sedap.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 25.000</span>
+                            </div>
+                             <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 50 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.8
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Bio-Aktivator Pengurai Sampah', '25.000', '50', 'https://images.unsplash.com/photo-1628103855018-b2a632824e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1535241749838-299277b63f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maggot BSF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                      <div class="absolute top-4 right-4 bg-purple-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
+                        <i class="fa-solid fa-check mr-1"></i> Protein Tinggi
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                      <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-paw"></i> Pakan Ternak
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Maggot BSF Kering (100gr)
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Hasil biokonversi sampah organik. Pakan alami berprotein tinggi untuk ikan lele, koi, ayam, burung, dan reptil kesayangan Anda.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 10.000</span>
+                            </div>
+                             <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 20 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 5.0
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Maggot BSF Kering (100gr)', '10.000', '20', 'https://images.unsplash.com/photo-1535241749838-299277b63f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tanah Kompos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                      <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-seedling"></i> Media Tanam
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Media Tanam Kompos Super
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Campuran tanah subur, sekam bakar, dan kompos matang hasil olahan warga. Siap pakai, gembur, dan kaya unsur hara.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 12.000</span>
+                            </div>
+                             <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 25 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.6
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Media Tanam Kompos Super', '12.000', '25', 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sabun Eco Enzyme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
+                      <div class="flex gap-2 mb-3">
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <i class="fa-solid fa-soap"></i> Pembersih
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">
+                            <i class="fa-solid fa-leaf"></i> Natural
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-leafia-dark mb-2 group-hover:text-leafia-main transition-colors">
+                        Sabun Lerak Eco-Enzyme
+                    </h3>
+                    
+                    <p class="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">
+                        Cairan pembersih serbaguna dari fermentasi kulit buah dan lerak. Aman untuk mencuci piring, mengepel lantai, dan anti bakteri.
+                    </p>
+                    
+                    <div class="flex justify-between items-end mb-4 mt-auto">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg font-bold text-leafia-dark">Rp 20.000</span>
+                            </div>
+                             <div class="flex items-center gap-1 text-xs font-bold text-green-600">
+                                <i class="fa-solid fa-coins"></i> 40 Poin
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs text-yellow-500 font-bold">
+                            <i class="fa-solid fa-star"></i> 4.9
+                        </div>
+                    </div>
+                    
+                    <button onclick="openModal('Sabun Lerak Eco-Enzyme', '20.000', '40', 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"
+                        class="group w-full flex items-center justify-center gap-2 bg-leafia-dark hover:bg-leafia-main text-white font-bold py-3 rounded-xl text-sm transition-colors">
+                        Beli Sekarang
+                        <i class="bx bxs-shopping-bag text-[1.2em] leading-none inline-block w-0 overflow-hidden opacity-0 group-hover:w-[1em] group-hover:opacity-100 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center items-center gap-2">
+            <button class="px-4 py-2 rounded-lg bg-yellow-100 text-yellow-800 text-xs font-bold hover:bg-yellow-200 transition-colors disabled:opacity-50">Prev</button>
+            <button class="w-8 h-8 rounded-lg bg-leafia-main text-white text-xs font-bold flex items-center justify-center">1</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">2</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">3</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">4</button>
+            <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">5</button>
+            <button class="px-4 py-2 rounded-lg bg-leafia-yellow text-leafia-dark text-xs font-bold hover:bg-yellow-300 transition-colors">Next</button>
+        </div>
+
+    </main>
+
+    <div id="purchaseModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        
+        <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-5xl overflow-hidden flex flex-col md:flex-row h-[100%] md:h-[100%]">
+            
+            <div class="hidden md:flex w-5/12 bg-leafia-dark text-white p-10 flex-col relative overflow-hidden">
+                
+                <i class="fa-solid fa-leaf absolute -bottom-16 -left-16 text-[18rem] text-white/5 rotate-12 pointer-events-none z-0"></i>
+                
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute bottom-10 right-10 w-32 h-32 bg-leafia-yellow/10 rounded-full blur-xl pointer-events-none"></div>
+
+                <div class="relative z-10 w-full">
+                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md border border-white/10 shadow-inner">
+                        <i class="fa-solid fa-bag-shopping text-3xl text-white"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-2">Checkout</h2>
+                    <p class="text-gray-300 text-sm mb-8">Selesaikan pembelian Anda</p>
+
+                    <div class="space-y-5 text-sm font-medium">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span>Gratis ongkir pembelian pertama</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-solid fa-shield-halved text-xs"></i>
+                            </div>
+                            <span>Garansi 30 hari</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-leafia-yellow/20 flex items-center justify-center text-leafia-yellow shrink-0">
+                                <i class="fa-solid fa-recycle text-xs"></i>
+                            </div>
+                            <span>100% bahan daur ulang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-7/12 bg-white flex flex-col h-full">
+                <div class="px-8 py-5 border-b border-gray-100 flex justify-between items-center bg-white z-20 shrink-0">
+                    <h3 class="font-bold text-leafia-dark text-lg">Detail Pesanan</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-red-500 transition-colors p-2 hover:bg-gray-100 rounded-full">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex-grow overflow-y-auto p-8 space-y-8 custom-scrollbar">
+                    
+                    <div class="bg-[#f9fafb] rounded-2xl p-6 border border-gray-100">
+                        <h4 id="modalTitle" class="font-bold text-leafia-dark text-lg mb-4 pb-4 border-b border-gray-200">Nama Produk</h4>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Subtotal</span>
+                                <span id="modalSubtotal" class="font-bold text-gray-700">Rp 150.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">Jumlah</span>
+                                <div class="flex items-center gap-3 bg-white rounded-lg px-2 py-1 border border-gray-200 shadow-sm">
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-leafia-dark transition">-</button>
+                                    <span class="font-bold text-gray-700 w-4 text-center">1</span>
+                                    <button class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-leafia-dark transition">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-500">Diskon</span>
+                                <span class="font-bold text-green-600">-Rp 50.000</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 mt-4 border-t border-gray-200 flex justify-between items-end">
+                            <span class="font-bold text-leafia-dark text-lg">Total</span>
+                            <div class="text-right">
+                                <div id="modalTotal" class="text-2xl font-bold text-leafia-dark">Rp 100.000</div>
+                                <div class="text-xs text-gray-400 font-medium mt-1">atau <span id="modalPoints" class="text-green-600 font-bold"><i class="fa-solid fa-leaf mr-1"></i> 120 poin</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-leafia-dark mb-4 text-sm">Metode Pembayaran</h4>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only" checked>
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 peer-checked:ring-1 peer-checked:ring-leafia-main h-20">
+                                    <i class="fa-solid fa-leaf text-xl text-green-600"></i><span class="text-xs font-bold text-gray-600">Poin</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only">
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 h-20">
+                                    <i class="fa-solid fa-qrcode text-xl text-gray-800"></i><span class="text-xs font-bold text-gray-600">QRIS</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only">
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 h-20">
+                                    <span class="font-bold text-blue-500">Gopay</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only">
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 h-20">
+                                    <span class="font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded text-xs">DANA</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only">
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 h-20">
+                                    <span class="font-bold text-purple-600 text-sm">OVO</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer group"><input type="radio" name="payment" class="peer sr-only">
+                                <div class="border border-gray-200 rounded-xl py-4 flex flex-col items-center justify-center gap-2 hover:border-leafia-main hover:bg-leafia-light/10 transition-all peer-checked:border-leafia-main peer-checked:bg-leafia-light/20 h-20">
+                                    <span class="font-bold text-orange-500 text-xs">ShopeePay</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-leafia-dark mb-3 text-sm">Alamat Pengiriman</h4>
+                        <div class="bg-yellow-50/50 border border-yellow-100 rounded-xl p-4 flex items-start gap-4 hover:border-leafia-yellow transition-colors cursor-pointer">
+                            <div class="mt-1 text-leafia-dark"><i class="fa-solid fa-map-location-dot text-xl"></i></div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-center mb-1"><span class="font-bold text-leafia-dark text-sm">Rumah</span></div>
+                                <p class="text-xs text-gray-500 leading-relaxed mb-2">Jl. Melati No. 123, Kuta, Bali 80361</p>
+                                <span class="text-xs font-bold text-leafia-main hover:underline">Ubah alamat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 border-t border-gray-100 bg-white shrink-0">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button onclick="closeModal()" class="py-3.5 rounded-full border border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 text-sm"><i class="fa-solid fa-arrow-left"></i> Kembali</button>
+                        <button onclick="confirmPurchase()" class="py-3.5 rounded-full bg-leafia-yellow text-leafia-dark font-bold hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-200 flex items-center justify-center gap-2 text-sm"><i class="fa-solid fa-lock"></i> Bayar Sekarang</button>
+                    </div>
+                    <p class="text-[10px] text-center text-gray-400 mt-3 flex items-center justify-center gap-1"><i class="fa-solid fa-shield-halved"></i> Pembayaran aman dan terenkripsi</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modalStep2" class="hidden relative bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 text-center animate-fade-in-up">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-check text-4xl text-green-600 animate-bounce"></i></div>
+            <h3 class="text-2xl font-bold text-leafia-dark mb-2">Pembayaran Berhasil!</h3>
+            <p class="text-gray-500 text-sm mb-8 leading-relaxed">Terima kasih telah berkontribusi menjaga lingkungan. Pesananmu akan segera kami proses.</p>
+            <button onclick="closeModal()" class="w-full py-3.5 rounded-full bg-leafia-main text-white font-bold hover:bg-leafia-dark transition-colors shadow-lg">Kembali Belanja</button>
+        </div>
+    </div>
+    <footer class="bg-leafia-dark text-white pt-16 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="text-leafia-yellow text-2xl"><i class="fa-solid fa-leaf"></i></div>
+                        <span class="font-bold text-2xl tracking-tight">Leafia</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Platform inovatif untuk mengelola sampah plastik dan menciptakan lingkungan yang lebih bersih dan berkelanjutan untuk generasi mendatang.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Tautan Cepat</h5>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Beranda</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event</a></li>
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kirim Sampah</a></li>
+                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Layanan</h5>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pickup Sampah</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi Lingkungan</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Program Event</a></li>
+                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace Hijau</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-6 text-white">Hubungi Kami</h5>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i><span>Jl. Raya Ubud No. 88 Bali, Indonesia 80571</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-leafia-yellow"></i><span>+62-361-123-4567</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-leafia-yellow"></i><span>info@leafia.org</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-500">© 2025 Leafia. Semua hak dilindungi undang-undang.</div>
+        </div>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('purchaseModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtotal = document.getElementById('modalSubtotal');
+        const modalTotal = document.getElementById('modalTotal');
+        const modalPoints = document.getElementById('modalPoints');
+        const modalImg = document.getElementById('modalImg');
+        const step1 = document.querySelector('#purchaseModal > div.relative'); 
+        const step2 = document.getElementById('modalStep2');
+
+        function openModal(title, price, points, imgSrc) {
+            modalTitle.innerText = title;
+            modalSubtotal.innerText = 'Rp ' + price;
+            modalTotal.innerText = 'Rp ' + price; 
+            modalPoints.innerHTML = '<i class="fa-solid fa-leaf mr-1"></i> ' + points + ' poin';
+            
+            step1.classList.remove('hidden');
+            step1.classList.add('flex');
+            step2.classList.add('hidden');
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        function confirmPurchase() {
+            step1.classList.add('hidden');
+            step1.classList.remove('flex');
+            step2.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
