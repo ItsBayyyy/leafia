@@ -6,8 +6,15 @@
     <title>Leafia - Pickup</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    
+    <!-- CSS Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -30,8 +37,9 @@
         }
     </script>
 </head>
-<body class="font-sans text-gray-800 bg-white antialiased">
+<body class="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
 
+    <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-12">
@@ -41,7 +49,7 @@
                     <span class="font-bold text-xl tracking-tight text-leafia-main">Leafia</span>
                 </a>  
 
-                <!-- Desktop Menu (Hidden on Tablet, Visible on Laptop lg:) -->
+                <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
                     <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
@@ -89,7 +97,7 @@
                     </div>
                 </div>
 
-                <!-- Mobile menu button (Visible on Tablet/Mobile) -->
+                <!-- Mobile menu button -->
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-main hover:text-main-400 focus:outline-none transition-colors p-2">
                         <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
@@ -98,7 +106,7 @@
             </div>
         </div>
 
-        <!-- Mobile/Tablet Menu Dropdown (Matches White Navbar Theme) -->
+        <!-- Mobile/Tablet Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl transition-all duration-300 origin-top transform">
             <div class="px-4 py-4 space-y-2">
                 <a href="index.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Beranda</a>
@@ -125,24 +133,26 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <nav class="flex mb-12 text-sm text-gray-500 font-medium">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-12 text-sm text-gray-500 font-medium" data-aos="fade-right">
             <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-leafia-main font-bold">Kirim Sampah</span>
         </nav>
 
         <div class="grid md:grid-cols-2 gap-16 mb-24 items-center">
-            <div class="relative h-[600px] w-full max-w-[500px] mx-auto md:mr-auto hidden md:block">
+            <!-- Left Image Section -->
+            <div class="relative h-[600px] w-full max-w-[500px] mx-auto md:mr-auto hidden md:block" data-aos="fade-right">
                 <div class="absolute top-0 left-0 w-4/5 h-3/5 rounded-[2rem] overflow-hidden shadow-xl z-10">
                     <img src="assets/img/pickup/pickup-1.png" alt="Courier" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute bottom-0 right-0 w-4/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white z-20">
+                <div class="absolute bottom-0 right-0 w-4/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white z-20" data-aos="fade-up" data-aos-delay="200">
                      <img src="assets/img/pickup/pickup-2.png" alt="Recycling" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute top-10 -right-4 bg-leafia-yellow text-leafia-dark px-6 py-3 rounded-full shadow-lg z-30 font-bold flex items-center gap-2">
+                <div class="absolute top-10 -right-4 bg-leafia-yellow text-leafia-dark px-6 py-3 rounded-full shadow-lg z-30 font-bold flex items-center gap-2" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fa-solid fa-bolt"></i> Super Cepat
                 </div>
-                <div class="absolute bottom-20 -left-4 bg-leafia-dark text-white px-6 py-4 rounded-xl shadow-xl z-30">
+                <div class="absolute bottom-20 -left-4 bg-leafia-dark text-white px-6 py-4 rounded-xl shadow-xl z-30" data-aos="zoom-in" data-aos-delay="500">
                     <div class="flex items-center gap-3">
                         <div class="text-3xl font-bold text-leafia-yellow">50+</div>
                         <div class="text-xs leading-tight font-medium">Pengirim<br>Setiap Hari</div>
@@ -150,7 +160,8 @@
                 </div>
             </div>
 
-            <div>
+            <!-- Right Form Section -->
+            <div data-aos="fade-left">
                 <div class="flex items-center gap-2 text-leafia-main font-bold mb-4">
                     <i class="fa-solid fa-truck-fast"></i>
                     <span class="uppercase tracking-wider text-sm">Pickup Sampah</span>
@@ -167,7 +178,6 @@
                         <input type="text" class="w-full bg-leafia-gray border-none rounded-xl px-6 py-4 focus:ring-2 focus:ring-leafia-main outline-none text-gray-700 placeholder-gray-400" placeholder="Alamat Lengkap">
                     </div>
                     
-                    <!-- PERBAIKAN: Mengubah div menjadi label agar bisa diklik -->
                     <label class="block bg-leafia-gray rounded-xl p-8 text-center border-2 border-dashed border-gray-300 hover:border-leafia-main transition-colors cursor-pointer group hover:bg-gray-50">
                         <!-- Input file tersembunyi yang akan dipicu oleh label -->
                         <input type="file" id="file-upload" class="hidden" onchange="updateFileName(this)">
@@ -201,7 +211,8 @@
             </div>
         </div>
 
-        <div class="text-center mb-16">
+        <!-- Dropoff Locations -->
+        <div class="text-center mb-16" data-aos="fade-up">
             <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
                 <i class="fa-solid fa-map-location-dot"></i>
                 <span class="uppercase tracking-wider text-sm">Dropoff Sampah</span>
@@ -211,7 +222,7 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+            <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="0">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Melati</h3>
                     <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">2.5 km</span>
@@ -227,7 +238,7 @@
                     </li>
                 </ul>
             </div>
-             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Sejahtera</h3>
                     <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">4.8 km</span>
@@ -243,7 +254,7 @@
                     </li>
                 </ul>
             </div>
-             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+             <div class="bg-leafia-cream rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex justify-between items-start mb-4">
                     <h3 class="font-bold text-leafia-dark text-lg">Bank Sampah Bahari</h3>
                     <span class="bg-leafia-yellow text-leafia-dark text-[10px] font-bold px-2 py-1 rounded">1.1 km</span>
@@ -261,7 +272,7 @@
             </div>
         </div>
 
-        <div class="rounded-3xl overflow-hidden shadow-sm border border-gray-200 h-[400px] w-full bg-gray-100">
+        <div class="rounded-3xl overflow-hidden shadow-sm border border-gray-200 h-[400px] w-full bg-gray-100" data-aos="zoom-in" data-aos-delay="300">
             <iframe 
                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.4878845067!2d106.68942964687502!3d-6.229728025238562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Special%20Capital%20Region%20of%20Jakarta!5e0!3m2!1sen!2sid!4v1709283728372!5m2!1sen!2sid" 
                width="100%" 
@@ -481,7 +492,78 @@
         </div>
     </footer>   
 
+    <!-- AOS JS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/profile.js"></script>
     <script>
+        // Init AOS
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+        });
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('hamburger-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Toggle Profile Menu
+        function toggleProfileMenu() {
+            const dropdown = document.getElementById('profile-dropdown');
+            const chevron = document.getElementById('profile-chevron');
+            
+            if (dropdown.classList.contains('hidden')) {
+                dropdown.classList.remove('hidden');
+                setTimeout(() => {
+                    dropdown.classList.remove('opacity-0', 'scale-95');
+                    dropdown.classList.add('opacity-100', 'scale-100');
+                    chevron.classList.add('rotate-180');
+                }, 10);
+            } else {
+                dropdown.classList.remove('opacity-100', 'scale-100');
+                dropdown.classList.add('opacity-0', 'scale-95');
+                chevron.classList.remove('rotate-180');
+                setTimeout(() => {
+                    dropdown.classList.add('hidden');
+                }, 200);
+            }
+        }
+
+        // Close profile menu if clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profile-dropdown');
+            const button = document.getElementById('profile-btn');
+            
+            // Check if dropdown elements exist before accessing properties
+            if (dropdown && button) {
+                if (!dropdown.classList.contains('hidden') && 
+                    !dropdown.contains(event.target) && 
+                    !button.contains(event.target)) {
+                    
+                    dropdown.classList.remove('opacity-100', 'scale-100');
+                    dropdown.classList.add('opacity-0', 'scale-95');
+                    const chevron = document.getElementById('profile-chevron');
+                    if(chevron) chevron.classList.remove('rotate-180');
+                    setTimeout(() => {
+                        dropdown.classList.add('hidden');
+                    }, 200);
+                }
+            }
+        });
+
         const successModal = document.getElementById('successModal');
 
         function openSuccessModal() {
@@ -510,7 +592,5 @@
             }
         }
     </script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/profile.js"></script>
 </body>
 </html>

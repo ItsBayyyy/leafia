@@ -6,9 +6,15 @@
     <title>Leafia - Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    
+    <!-- CSS Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -44,7 +50,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 bg-leafia-cream antialiased">
+<body class="font-sans text-gray-800 bg-leafia-cream antialiased overflow-x-hidden">
 
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
@@ -56,7 +62,7 @@
                     <span class="font-bold text-xl tracking-tight text-leafia-yellow">Leafia</span>
                 </a>                
 
-                <!-- Desktop Menu (Hidden on Tablet/Mobile, Visible on Large Screens) -->
+                <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <a href="index.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Beranda</a>
                     <a href="event.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
@@ -65,7 +71,7 @@
                     <a href="marketplace.html" class="text-white bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Marketplace</a>
                 </div>
 
-                <!-- Desktop Profile (Hidden on Tablet/Mobile, Visible on Large Screens) -->
+                <!-- Desktop Profile -->
                 <div class="hidden lg:flex items-center gap-3">
                     <div class="relative">
                         <button id="profile-btn" onclick="toggleProfileMenu()" class="flex items-center gap-2 bg-leafia-yellow text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-yellow/80 transition-colors focus:outline-none">
@@ -101,8 +107,7 @@
                     </div>
                 </div>
 
-                <!-- Hamburger Button (Visible on Tablet/Mobile) -->
-                <!-- Updated: Removed hover:text-white to ensure it stays yellow -->
+                <!-- Hamburger Button -->
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-yellow hover:text-yellow-300 focus:outline-none transition-colors p-2">
                         <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
@@ -112,7 +117,6 @@
         </div>
 
         <!-- Mobile/Tablet Menu Dropdown -->
-        <!-- Updated: Changed bg-leafia-dark to bg-leafia-main to match navbar -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-leafia-main border-t border-white/10 shadow-xl transition-all duration-300 origin-top transform">
             <div class="px-4 py-4 space-y-2">
                 <a href="index.html" class="block text-leafia-main bg-leafia-light px-4 py-3 rounded-xl font-bold">Beranda</a>
@@ -145,25 +149,22 @@
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60"></div>
         </div>
 
-        <!-- UPDATED: Added a container wrapper identical to the Navbar to ensure left-alignment matches Logo -->
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
             <div class="max-w-3xl">
                 
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-white text-xs font-semibold mb-6 border border-white/30">
+                <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-white text-xs font-semibold mb-6 border border-white/30">
                     <i class="fa-solid fa-earth-asia"></i> Mari selamatkan bumi kita
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
                     Bumi bukan warisan,<br/>tapi titipan untuk<br/>generasi berikutnya.
                 </h1>
                 
-                <!-- UPDATED: Removed mx-auto from paragraph -->
-                <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-xl font-light">
+                <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" class="text-gray-200 text-lg md:text-xl mb-8 max-w-xl font-light">
                     Bergabung bersama kami menjaga kelestarian alam untuk masa depan yang lebih hijau.
                 </p>
                 
-                <!-- UPDATED: Changed justify-center to justify-start -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-start">
+                <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000" class="flex flex-col sm:flex-row gap-4 justify-start">
                     <a href="#events" class="group bg-leafia-yellow text-leafia-dark px-8 py-3.5 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg flex items-center justify-center gap-2">
                         Mulai Sekarang <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
@@ -173,7 +174,6 @@
         </div>
         
         <!-- Bottom Fade -->
-        <!-- Brush Image Divider -->
         <div class="absolute bottom-0 left-0 w-full h-22 bg-gradient-to-t to-transparent z-10">
             <img 
                 src="assets/img/shape.webp" 
@@ -185,11 +185,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 md:py-32 px-4 max-w-7xl mx-auto">
+    <section id="about" class="py-20 md:py-32 px-4 max-w-7xl mx-auto overflow-hidden">
         <div class="grid md:grid-cols-2 gap-16 items-start">
     
-            <!-- LEFT: Images (Mobile = bawah, Desktop = kiri) -->
-            <div class="relative h-[500px] w-full max-w-[500px] mx-auto md:mr-auto order-2 md:order-1 md:sticky top-24">
+            <!-- LEFT: Images -->
+            <div class="relative h-[500px] w-full max-w-[500px] mx-auto md:mr-auto order-2 md:order-1 md:sticky top-24" data-aos="fade-right" data-aos-duration="1000">
                 <!-- Large Image -->
                 <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-[2rem] overflow-hidden shadow-2xl z-10">
                     <img src="assets/img/about-1.png" 
@@ -197,13 +197,13 @@
                 </div>
     
                 <!-- Small Image -->
-                <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-leafia-cream z-20">
+                <div class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-leafia-cream z-20" data-aos="fade-up" data-aos-delay="300">
                     <img src="assets/img/about-2.png" 
                          alt="Planting trees" class="w-full h-full object-cover">
                 </div>
     
                 <!-- Badge -->
-                <div class="absolute bottom-10 -right-4 bg-leafia-main text-white px-6 py-4 rounded-xl shadow-xl z-30">
+                <div class="absolute bottom-10 -right-4 bg-leafia-main text-white px-6 py-4 rounded-xl shadow-xl z-30" data-aos="zoom-in" data-aos-delay="500">
                     <div class="flex items-center gap-3">
                         <div class="text-3xl font-bold text-leafia-yellow">10+</div>
                         <div class="text-xs leading-tight font-medium">
@@ -218,8 +218,8 @@
                 </div>
             </div>
     
-            <!-- RIGHT: Text Content (Mobile = atas, Desktop = kanan) -->
-            <div class="order-1 md:order-2">
+            <!-- RIGHT: Text Content -->
+            <div class="order-1 md:order-2" data-aos="fade-left" data-aos-duration="1000">
                 
                 <div class="flex items-center gap-2 text-leafia-main font-bold mb-4">
                     <i class="fa-solid fa-seedling"></i>
@@ -252,15 +252,15 @@
                     <!-- Tab 1 -->
                     <div id="content-about-us" class="tab-content block">
                         <div class="grid grid-cols-3 gap-8 mb-8 py-2">
-                            <div>
+                            <div data-aos="fade-up" data-aos-delay="100">
                                 <h4 class="text-3xl font-bold text-leafia-main mb-1">2,000+</h4>
                                 <p class="text-gray-500 text-sm">Sampah Terolah</p>
                             </div>
-                            <div>
+                            <div data-aos="fade-up" data-aos-delay="200">
                                 <h4 class="text-3xl font-bold text-leafia-main mb-1">120+</h4>
                                 <p class="text-gray-500 text-sm">Komunitas</p>
                             </div>
-                            <div>
+                            <div data-aos="fade-up" data-aos-delay="300">
                                 <h4 class="text-3xl font-bold text-leafia-main mb-1">50+</h4>
                                 <p class="text-gray-500 text-sm">Mitra Bank Sampah</p>
                             </div>
@@ -356,7 +356,7 @@
     <!-- Process Section -->
     <section class="bg-gradient-to-b from-[#f9fdfa] to-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
                     <i class="fa-solid fa-layer-group"></i>
                     <span class="uppercase tracking-wider text-sm">Cara Kerja</span>
@@ -367,7 +367,8 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group" 
+                     data-aos="fade-up" data-aos-delay="0">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
                             <i class="fa-solid fa-user-plus"></i>
@@ -383,7 +384,8 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group" 
+                     data-aos="fade-up" data-aos-delay="100">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
                             <i class="fa-solid fa-hand-holding-heart"></i>
@@ -399,7 +401,8 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+                <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group" 
+                     data-aos="fade-up" data-aos-delay="200">
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-12 h-12 bg-leafia-main text-white rounded-full flex items-center justify-center text-xl group-hover:bg-leafia-yellow group-hover:text-leafia-dark transition-colors">
                             <i class="fa-solid fa-medal"></i>
@@ -415,7 +418,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
                  <a href="#" class="group bg-leafia-yellow text-leafia-dark px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg inline-flex items-center gap-2">
                     Mulai Kontribusi <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
                 </a>
@@ -425,7 +428,7 @@
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-20 px-4 max-w-7xl mx-auto">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-aos="fade-up">
             <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
                 <i class="fa-solid fa-image"></i>
                 <span class="uppercase tracking-wider text-sm">Dokumentasi</span>
@@ -437,6 +440,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Item 1 -->
             <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="0"
                  data-title="Belajar Pengolahan Sampah Organik" 
                  data-description="Anak muda sedang belajar bersama di ruang edukasi ramah lingkungan, mempelajari kompos dan praktik pengolahan sampah organik dengan suasana hangat dan alami."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -448,6 +452,7 @@
             </div>
              <!-- Item 2 -->
              <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="100"
                  data-title="Aksi Pengumpulan Sampah Organik di Lingkungan Warga" 
                  data-description="Mengumpulkan sampah organik dari warga menggunakan wadah daur ulang, menciptakan suasana ramah dan bersih di area permukiman tropis."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -459,6 +464,7 @@
             </div>
              <!-- Item 3 -->
              <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="200"
                  data-title="Mengolah Sampah Organik Menjadi Kompos" 
                  data-description="Mencampur daun kering dan sisa makanan di kotak kompos kayu, menghadirkan suasana tenang dan sadar lingkungan."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -470,6 +476,7 @@
             </div>
              <!-- Item 4 -->
              <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="0"
                  data-title="Menanam Sayuran dengan Kompos Buatan Sendiri" 
                  data-description="Kelompok remaja menanam sayuran di kebun kecil perkotaan menggunakan kompos yang mereka buat sendiri."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -481,6 +488,7 @@
             </div>
              <!-- Item 5 -->
              <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="100"
                  data-title="Belajar Memilah Sampah Organik dengan Benar" 
                  data-description="Para peserta muda mengikuti sesi edukasi pemilahan sampah organik."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -492,6 +500,7 @@
             </div>
              <!-- Item 6 -->
              <div onclick="openModal(this)" 
+                 data-aos="zoom-in" data-aos-delay="200"
                  data-title="Aksi Kampanye Kurangi Sampah Organik" 
                  data-description="Mengajak masyarakat peduli lingkungan melalui pesan ramah tampilan di area taman tropis."
                  class="group relative overflow-hidden rounded-2xl h-64 cursor-pointer transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -506,7 +515,7 @@
 
     <!-- Events Section -->
     <section id="events" class="py-20 px-4 max-w-7xl mx-auto bg-gray-50 rounded-[3rem]">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6" data-aos="fade-up">
             <div>
                 <div class="flex items-center gap-2 text-leafia-main font-bold mb-3">
                     <i class="fa-solid fa-calendar-days"></i>
@@ -520,8 +529,9 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Event Card 1 (Refined to match event.html) -->
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Event Card 1 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="0">
                 <div class="relative h-56 overflow-hidden">
                     <img src="assets/img/event/event-1.jpg" alt="Teknik Komposting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -561,8 +571,9 @@
                 </div>
             </div>
 
-            <!-- Event Card 2 (Refined to match event.html) -->
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Event Card 2 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-56 overflow-hidden">
                     <img src="assets/img/event/event-2.jpg" alt="Manajemen Sampah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -602,8 +613,9 @@
                 </div>
             </div>
 
-            <!-- Event Card 3 (Refined to match event.html) -->
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Event Card 3 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-56 overflow-hidden">
                     <img src="assets/img/event/event-3.jpg" alt="Aksi Bersih" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -648,7 +660,7 @@
     <!-- FAQ Section -->
     <section class="py-20 px-4 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12">
-            <div>
+            <div data-aos="fade-right">
                  <div class="flex items-center gap-2 text-leafia-main font-bold mb-3">
                     <i class="fa-solid fa-circle-question"></i>
                     <span class="uppercase tracking-wider text-sm">FAQ</span>
@@ -657,7 +669,7 @@
                 <p class="text-gray-500 mb-8">Temukan jawaban untuk pertanyaan umum tentang cara bergabung dan berkontribusi di Leafia.</p>
             </div>
 
-            <div class="space-y-4">
+            <div class="space-y-4" data-aos="fade-left" data-aos-delay="200">
                 <!-- FAQ Item 1 -->
                 <div class="border border-gray-200 rounded-2xl p-4 md:p-6 transition-all hover:border-leafia-main group">
                     <details class="group">
@@ -720,7 +732,7 @@
 
     <!-- Team Section -->
     <section class="py-20 px-4 max-w-7xl mx-auto bg-white">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16" data-aos="fade-up">
             <div class="flex items-center justify-center gap-2 text-leafia-main font-bold mb-3">
                 <i class="fa-solid fa-users"></i>
                 <span class="uppercase tracking-wider text-sm">Tim Kami</span>
@@ -731,7 +743,7 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <!-- Team 1 -->
-            <div class="text-center group">
+            <div class="text-center group" data-aos="fade-up" data-aos-delay="0">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
                     <img src="assets/img/team-1.png" alt="Team" class="w-full h-full object-cover">
                 </div>
@@ -739,7 +751,7 @@
                 <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
             </div>
              <!-- Team 2 -->
-             <div class="text-center group">
+             <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
                     <img src="assets/img/team-2.png" alt="Team" class="w-full h-full object-cover">
                 </div>
@@ -747,7 +759,7 @@
                 <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
             </div>
              <!-- Team 3 -->
-             <div class="text-center group">
+             <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
                     <img src="assets/img/team-3.png" alt="Team" class="w-full h-full object-cover">
                 </div>
@@ -755,7 +767,7 @@
                 <p class="text-sm text-leafia-main font-medium uppercase tracking-wide">Tim Leafia</p>
             </div>
              <!-- Team 4 -->
-             <div class="text-center group">
+             <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-leafia-light group-hover:border-leafia-yellow transition-colors">
                     <img src="assets/img/team-4.png" alt="Team" class="w-full h-full object-cover">
                 </div>
@@ -769,7 +781,7 @@
     <section id="contact" class="py-20 px-4 max-w-7xl mx-auto mb-10">
         <div class="grid md:grid-cols-2 gap-12 bg-[#f9fdfa] rounded-[3rem] p-8 md:p-12 border border-gray-100 shadow-sm">
             <!-- Left: Contact Info Buttons -->
-            <div>
+            <div data-aos="fade-right">
                 <h3 class="text-3xl font-bold text-leafia-dark mb-2">Hubungi Kami</h3>
                 <p class="text-gray-500 mb-8">Punya pertanyaan atau ingin berkolaborasi? Jangan ragu menghubungi kami.</p>
 
@@ -815,7 +827,7 @@
             </div>
 
             <!-- Right: Form -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-left" data-aos-delay="200">
                 <h4 class="font-bold text-xl text-leafia-dark mb-6">Kirim Pesan</h4>
                 <form class="space-y-4">
                     <div>
@@ -974,7 +986,17 @@
     </footer>    
 
     <script src="assets/js/navbar.js"></script>
+    
+    <!-- AOS JS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Init AOS
+        AOS.init({
+            once: true, // Animasi hanya terjadi sekali saat scroll ke bawah
+            offset: 50, // Memicu animasi sedikit lebih awal
+            duration: 800, // Durasi animasi dalam ms
+        });
+
         // Close profile menu if clicking outside
         document.addEventListener('click', function(event) {
             const dropdown = document.getElementById('profile-dropdown');
@@ -1007,6 +1029,11 @@
             if (selectedContent) {
                 selectedContent.classList.remove('hidden');
                 selectedContent.classList.add('block');
+                
+                // Refresh AOS when switching tabs to animate new content
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 100);
             }
 
             // Update button styles

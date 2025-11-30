@@ -6,9 +6,15 @@
     <title>Leafia - Marketplace</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    
+    <!-- CSS Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -31,8 +37,9 @@
         }
     </script>
 </head>
-<body class="font-sans text-gray-800 bg-white antialiased">
+<body class="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
 
+    <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-12">
@@ -42,7 +49,7 @@
                     <span class="font-bold text-xl tracking-tight text-leafia-main">Leafia</span>
                 </a>  
 
-                <!-- Desktop Menu (Hidden on Tablet, Visible on Laptop lg:) -->
+                <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
                     <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
@@ -90,7 +97,7 @@
                     </div>
                 </div>
 
-                <!-- Mobile menu button (Visible on Tablet/Mobile) -->
+                <!-- Mobile menu button -->
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-main hover:text-main-400 focus:outline-none transition-colors p-2">
                         <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
@@ -99,7 +106,7 @@
             </div>
         </div>
 
-        <!-- Mobile/Tablet Menu Dropdown (Matches White Navbar Theme) -->
+        <!-- Mobile/Tablet Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl transition-all duration-300 origin-top transform">
             <div class="px-4 py-4 space-y-2">
                 <a href="index.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Beranda</a>
@@ -126,13 +133,15 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <nav class="flex mb-8 text-sm text-gray-500 font-medium">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8 text-sm text-gray-500 font-medium" data-aos="fade-right">
             <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-leafia-main font-bold">Toko Lingkungan</span>
         </nav>
 
-        <div class="flex flex-col md:flex-row gap-4 mb-10">
+        <!-- Search & Filter Bar -->
+        <div class="flex flex-col md:flex-row gap-4 mb-10" data-aos="fade-down" data-aos-delay="100">
             <div class="relative flex-grow">
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -157,9 +166,12 @@
             </div>
         </div>
 
+        <!-- Product Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="0">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-1.png" alt="Komposter Ember" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
@@ -207,7 +219,9 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 2 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-2.png" alt="Pupuk Cair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -251,7 +265,9 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 3 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-3.jpg" alt="EM4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -292,7 +308,9 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 4 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="0">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-4.png" alt="Maggot BSF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                       <div class="absolute top-4 right-4 bg-purple-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
@@ -336,7 +354,9 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 5 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-5.png" alt="Tanah Kompos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -377,7 +397,9 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <!-- Product 6 -->
+            <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group" 
+                 data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-64 overflow-hidden">
                     <img src="assets/img/marketplace/market-6.png" alt="Sabun Eco Enzyme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
@@ -423,7 +445,7 @@
 
         </div>
 
-        <div class="flex justify-center items-center gap-2">
+        <div class="flex justify-center items-center gap-2" data-aos="fade-up" data-aos-offset="0">
             <button class="px-4 py-2 rounded-lg bg-yellow-100 text-yellow-800 text-xs font-bold hover:bg-yellow-200 transition-colors disabled:opacity-50">Prev</button>
             <button class="w-8 h-8 rounded-lg bg-leafia-main text-white text-xs font-bold flex items-center justify-center">1</button>
             <button class="w-8 h-8 rounded-lg bg-white border border-gray-200 text-gray-600 text-xs font-bold flex items-center justify-center hover:border-leafia-main hover:text-leafia-main transition-colors">2</button>
@@ -661,7 +683,76 @@
         </div>
     </footer>  
 
+    <!-- AOS JS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Init AOS
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+        });
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('hamburger-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Toggle Profile Menu
+        function toggleProfileMenu() {
+            const dropdown = document.getElementById('profile-dropdown');
+            const chevron = document.getElementById('profile-chevron');
+            
+            if (dropdown.classList.contains('hidden')) {
+                dropdown.classList.remove('hidden');
+                setTimeout(() => {
+                    dropdown.classList.remove('opacity-0', 'scale-95');
+                    dropdown.classList.add('opacity-100', 'scale-100');
+                    chevron.classList.add('rotate-180');
+                }, 10);
+            } else {
+                dropdown.classList.remove('opacity-100', 'scale-100');
+                dropdown.classList.add('opacity-0', 'scale-95');
+                chevron.classList.remove('rotate-180');
+                setTimeout(() => {
+                    dropdown.classList.add('hidden');
+                }, 200);
+            }
+        }
+
+        // Close profile menu if clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profile-dropdown');
+            const button = document.getElementById('profile-btn');
+            
+            // Check if dropdown elements exist before accessing properties
+            if (dropdown && button) {
+                if (!dropdown.classList.contains('hidden') && 
+                    !dropdown.contains(event.target) && 
+                    !button.contains(event.target)) {
+                    
+                    dropdown.classList.remove('opacity-100', 'scale-100');
+                    dropdown.classList.add('opacity-0', 'scale-95');
+                    const chevron = document.getElementById('profile-chevron');
+                    if(chevron) chevron.classList.remove('rotate-180');
+                    setTimeout(() => {
+                        dropdown.classList.add('hidden');
+                    }, 200);
+                }
+            }
+        });
+
         const modal = document.getElementById('purchaseModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalSubtotal = document.getElementById('modalSubtotal');

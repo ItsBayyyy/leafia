@@ -6,9 +6,15 @@
     <title>Leafia - Profil Saya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="assets/img/logo/green.png">
+    
+    <!-- CSS Libraries -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.boxicons.com/3.0.5/fonts/basic/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -31,8 +37,9 @@
         }
     </script>
 </head>
-<body class="font-sans text-gray-800 bg-[#f9fdfa] antialiased">
+<body class="font-sans text-gray-800 bg-[#f9fdfa] antialiased overflow-x-hidden">
 
+    <!-- Navbar -->
     <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-12">
@@ -42,7 +49,7 @@
                     <span class="font-bold text-xl tracking-tight text-leafia-main">Leafia</span>
                 </a>  
 
-                <!-- Desktop Menu (Hidden on Tablet, Visible on Laptop lg:) -->
+                <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
                     <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
@@ -90,7 +97,7 @@
                     </div>
                 </div>
 
-                <!-- Mobile menu button (Visible on Tablet/Mobile) -->
+                <!-- Mobile menu button -->
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-main hover:text-main-400 focus:outline-none transition-colors p-2">
                         <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
@@ -99,7 +106,7 @@
             </div>
         </div>
 
-        <!-- Mobile/Tablet Menu Dropdown (Matches White Navbar Theme) -->
+        <!-- Mobile/Tablet Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl transition-all duration-300 origin-top transform">
             <div class="px-4 py-4 space-y-2">
                 <a href="index.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Beranda</a>
@@ -126,23 +133,26 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <nav class="flex mb-8 text-sm text-gray-500 font-medium">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8 text-sm text-gray-500 font-medium" data-aos="fade-right">
             <a href="index.html" class="hover:text-leafia-main"><i class="fa-solid fa-house mr-2"></i>Beranda</a>
             <span class="mx-2">/</span>
             <span class="text-leafia-main font-bold">Profil Saya</span>
         </nav>
 
-        <div class="bg-white rounded-3xl p-8 mb-8 border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start relative overflow-hidden">
+        <!-- Header Profile -->
+        <div class="bg-white rounded-3xl p-8 mb-8 border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start relative overflow-hidden" 
+             data-aos="fade-down" data-aos-duration="1000">
             <div class="absolute top-0 right-0 w-64 h-64 bg-leafia-light rounded-bl-full -mr-16 -mt-16 opacity-50 pointer-events-none"></div>
 
-            <div class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+            <div class="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0" data-aos="zoom-in" data-aos-delay="200">
                 <img src="assets/img/profile/profile.png" alt="User" class="w-full h-full rounded-full object-cover border-4 border-white shadow-lg">
                 <div class="absolute bottom-2 right-2 bg-leafia-yellow text-leafia-dark w-8 h-8 rounded-full flex items-center justify-center border-2 border-white shadow-sm" title="Verified Member">
                     <i class="fa-solid fa-check text-xs"></i>
                 </div>
             </div>
             
-            <div class="flex-grow text-center md:text-left z-10">
+            <div class="flex-grow text-center md:text-left z-10" data-aos="fade-left" data-aos-delay="400">
                 <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
                     <h1 class="text-3xl font-bold text-leafia-dark">Michele Alexandra</h1>
                     <span class="bg-leafia-main text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider mx-auto md:mx-0">
@@ -182,10 +192,13 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
+            <!-- Left Column: Stats & History -->
             <div class="lg:col-span-2 space-y-8">
                 
+                <!-- Stats Cards -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between" 
+                         data-aos="fade-up" data-aos-delay="0">
                         <div>
                             <span class="block text-xs text-gray-400 font-bold uppercase mb-1">Saldo Poin</span>
                             <span class="block text-2xl font-extrabold text-leafia-dark">1,250</span>
@@ -194,7 +207,8 @@
                             <i class="fa-solid fa-coins text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between" 
+                         data-aos="fade-up" data-aos-delay="100">
                         <div>
                             <span class="block text-xs text-gray-400 font-bold uppercase mb-1">Sampah Diolah</span>
                             <span class="block text-2xl font-extrabold text-leafia-dark">45.2 <span class="text-sm font-normal text-gray-500">kg</span></span>
@@ -203,7 +217,8 @@
                             <i class="fa-solid fa-weight-hanging text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between" 
+                         data-aos="fade-up" data-aos-delay="200">
                         <div>
                             <span class="block text-xs text-gray-400 font-bold uppercase mb-1">Jejak Karbon</span>
                             <span class="block text-2xl font-extrabold text-leafia-dark">-12 <span class="text-sm font-normal text-gray-500">kg</span></span>
@@ -214,7 +229,8 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                <!-- History -->
+                <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-bold text-leafia-dark">Riwayat Aktivitas</h2>
                         <a href="#" class="text-xs font-bold text-leafia-main hover:underline">Lihat Semua</a>
@@ -223,7 +239,7 @@
                     <div class="space-y-6 relative">
                         <div class="absolute left-6 top-2 bottom-2 w-0.5 bg-gray-100"></div>
 
-                        <div class="relative pl-14">
+                        <div class="relative pl-14" data-aos="fade-left" data-aos-delay="400">
                             <div class="absolute left-3 top-1 w-6 h-6 rounded-full bg-green-100 border-2 border-white flex items-center justify-center z-10">
                                 <i class="fa-solid fa-recycle text-[10px] text-green-600"></i>
                             </div>
@@ -237,7 +253,7 @@
                             </div>
                         </div>
 
-                        <div class="relative pl-14">
+                        <div class="relative pl-14" data-aos="fade-left" data-aos-delay="500">
                             <div class="absolute left-3 top-1 w-6 h-6 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center z-10">
                                 <i class="fa-solid fa-bag-shopping text-[10px] text-blue-600"></i>
                             </div>
@@ -251,7 +267,7 @@
                             </div>
                         </div>
 
-                        <div class="relative pl-14">
+                        <div class="relative pl-14" data-aos="fade-left" data-aos-delay="600">
                             <div class="absolute left-3 top-1 w-6 h-6 rounded-full bg-purple-100 border-2 border-white flex items-center justify-center z-10">
                                 <i class="fa-solid fa-users text-[10px] text-purple-600"></i>
                             </div>
@@ -268,9 +284,11 @@
                 </div>
             </div>
 
+            <!-- Right Column: Sidebar -->
             <div class="lg:col-span-1 space-y-8">
                 
-                <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm">
+                <!-- Badges -->
+                <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm" data-aos="fade-left" data-aos-delay="100">
                     <h3 class="font-bold text-leafia-dark mb-4">Koleksi Badge</h3>
                     <div class="grid grid-cols-3 gap-3">
                         <div class="aspect-square bg-green-50 rounded-xl flex flex-col items-center justify-center p-2 text-center group cursor-help relative">
@@ -308,7 +326,8 @@
                     </div>
                 </div>
 
-                <div class="bg-leafia-dark rounded-3xl p-6 text-white relative overflow-hidden">
+                <!-- Next Level Target -->
+                <div class="bg-leafia-dark rounded-3xl p-6 text-white relative overflow-hidden" data-aos="fade-left" data-aos-delay="200">
                     <div class="relative z-10">
                         <h3 class="font-bold mb-2">Target Berikutnya</h3>
                         <p class="text-xs text-gray-300 mb-4">Kumpulkan 250 poin lagi untuk naik ke level <strong>Eco Warrior</strong>.</p>
@@ -324,7 +343,8 @@
                     <i class="fa-solid fa-trophy absolute -bottom-4 -right-4 text-8xl text-white/5"></i>
                 </div>
 
-                <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm">
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm" data-aos="fade-left" data-aos-delay="300">
                     <h3 class="font-bold text-leafia-dark mb-4">Aksi Cepat</h3>
                     <div class="space-y-3">
                         <a href="pickup.html" class="block w-full py-3 px-4 rounded-xl bg-leafia-light text-leafia-dark font-bold text-sm text-center hover:bg-green-100 transition-colors">
@@ -345,6 +365,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="relative bg-leafia-dark text-white pt-16 pb-8 overflow-hidden mt-20">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
@@ -421,7 +442,77 @@
         </div>
     </footer>  
 
+    <!-- AOS JS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/profile.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+        });
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('hamburger-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Toggle Profile Menu
+        function toggleProfileMenu() {
+            const dropdown = document.getElementById('profile-dropdown');
+            const chevron = document.getElementById('profile-chevron');
+            
+            if (dropdown.classList.contains('hidden')) {
+                dropdown.classList.remove('hidden');
+                setTimeout(() => {
+                    dropdown.classList.remove('opacity-0', 'scale-95');
+                    dropdown.classList.add('opacity-100', 'scale-100');
+                    chevron.classList.add('rotate-180');
+                }, 10);
+            } else {
+                dropdown.classList.remove('opacity-100', 'scale-100');
+                dropdown.classList.add('opacity-0', 'scale-95');
+                chevron.classList.remove('rotate-180');
+                setTimeout(() => {
+                    dropdown.classList.add('hidden');
+                }, 200);
+            }
+        }
+
+        // Close profile menu if clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('profile-dropdown');
+            const button = document.getElementById('profile-btn');
+            
+            // Check if dropdown elements exist before accessing properties
+            if (dropdown && button) {
+                if (!dropdown.classList.contains('hidden') && 
+                    !dropdown.contains(event.target) && 
+                    !button.contains(event.target)) {
+                    
+                    dropdown.classList.remove('opacity-100', 'scale-100');
+                    dropdown.classList.add('opacity-0', 'scale-95');
+                    const chevron = document.getElementById('profile-chevron');
+                    if(chevron) chevron.classList.remove('rotate-180');
+                    setTimeout(() => {
+                        dropdown.classList.add('hidden');
+                    }, 200);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
