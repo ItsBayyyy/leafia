@@ -36,30 +36,89 @@
     <nav class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 py-4 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-12">
+                <!-- Logo -->
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="text-leafia-main text-2xl"><i class="fa-solid fa-leaf"></i></div>
-                    <span class="font-bold text-xl tracking-tight text-leafia-dark">Leafia</span>
-                </a>
+                    <img src="assets/img/logo/green.png" onerror="this.src='https://placehold.co/32x32/0f5142/ffffff?text=L'" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                    <span class="font-bold text-xl tracking-tight text-leafia-main">Leafia</span>
+                </a>  
 
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-                    <a href="index.html" class="hover:text-leafia-main transition-colors">Beranda</a>
-                    <a href="events.html" class="hover:text-leafia-main transition-colors">Event</a>
-                    <a href="edukasi.html" class="hover:text-leafia-main transition-colors">Edukasi</a>
-                    <a href="pickup.html" class="hover:text-leafia-main transition-colors">Kirim Sampah</a>
+                <!-- Desktop Menu (Hidden on Tablet, Visible on Laptop lg:) -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
+                    <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
+                    <a href="edukasi.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Edukasi</a>
+                    <a href="pickup.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Kirim Sampah</a>
                     <a href="marketplace.html" class="text-leafia-main font-bold bg-leafia-light px-4 py-2 rounded-full">Marketplace</a>
                 </div>
 
-                <div class="hidden md:flex items-center gap-3">
-                    <div class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-dark transition-colors">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
-                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                <!-- User Profile (Desktop) -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <div class="relative">
+                        <button id="profile-btn" onclick="toggleProfileMenu()" class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-main/80 transition-colors focus:outline-none">
+                            <img src="assets/img/profile/profile.png" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="Profile">
+                            <i class="fa-solid fa-chevron-down text-xs ml-1 transition-transform duration-200" id="profile-chevron"></i>
+                        </button>
+
+                        <!-- Profile Dropdown Modal -->
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-60 bg-[#fcfcfb] rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-4 z-50 origin-top-right transition-all duration-200 ease-in-out opacity-0 scale-95 transform">
+                            <!-- User Info -->
+                            <div class="mb-4 pb-3 border-b border-gray-100">
+                                <h4 class="font-bold text-lg text-leafia-dark mb-0.5">Jane Doe</h4>
+                                <p class="text-xs text-leafia-main font-medium">janedoe@leafia.com</p>
+                            </div>
+                            
+                            <!-- Menu Items -->
+                            <ul class="space-y-1">
+                                <li>
+                                    <a href="profile.html" class="flex items-center gap-3 text-leafia-dark hover:bg-leafia-light/50 hover:text-leafia-main px-3 py-2 rounded-xl transition-all font-bold text-sm group">
+                                        <span class="w-6 flex justify-center">
+                                            <i class="fa-solid fa-user text-base text-leafia-main group-hover:scale-110 transition-transform"></i>
+                                        </span>
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center gap-3 text-rose-500 hover:bg-rose-50 px-3 py-2 rounded-xl transition-all font-bold text-sm group">
+                                        <span class="w-6 flex justify-center">
+                                            <i class="fa-solid fa-arrow-right-from-bracket text-base text-rose-500 group-hover:scale-110 transition-transform"></i>
+                                        </span>
+                                        Keluar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="md:hidden flex items-center">
-                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                <!-- Mobile menu button (Visible on Tablet/Mobile) -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-main hover:text-main-400 focus:outline-none transition-colors p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile/Tablet Menu Dropdown (Matches White Navbar Theme) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl transition-all duration-300 origin-top transform">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Beranda</a>
+                <a href="event.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Event</a>
+                <a href="edukasi.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Edukasi</a>
+                <a href="pickup.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Kirim Sampah</a>
+                <a href="marketplace.html" class="block text-leafia-main bg-leafia-light px-4 py-3 rounded-xl font-bold transition-colors">Marketplace</a>
+                
+                <!-- Mobile Profile Section -->
+                <div class="border-t border-gray-100 mt-4 pt-4 pb-2">
+                    <div class="flex items-center gap-3 px-4 mb-3">
+                        <img src="assets/img/profile/profile.png" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" class="w-10 h-10 rounded-full border-2 border-leafia-main object-cover" alt="Profile">
+                        <div>
+                            <p class="text-leafia-dark font-bold">Jane Doe</p>
+                            <p class="text-xs text-gray-500">janedoe@leafia.com</p>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="block text-gray-600 hover:text-leafia-main px-4 py-2 text-sm"><i class="fa-solid fa-user mr-2"></i> Lihat Profil</a>
+                    <a href="#" class="block text-rose-500 hover:text-rose-600 px-4 py-2 text-sm"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Keluar</a>
                 </div>
             </div>
         </div>
@@ -102,7 +161,7 @@
             
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Komposter Ember" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-1.png" alt="Komposter Ember" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     <div class="absolute top-4 right-4 bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
                         <i class="fa-solid fa-fire mr-1"></i> Best Seller
                     </div>
@@ -150,7 +209,7 @@
 
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pupuk Cair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-2.png" alt="Pupuk Cair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
                 <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
                       <div class="flex gap-2 mb-3">
@@ -194,7 +253,7 @@
 
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1628103855018-b2a632824e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EM4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-3.jpg" alt="EM4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
                 <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
                       <div class="flex gap-2 mb-3">
@@ -235,7 +294,7 @@
 
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1535241749838-299277b63f7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maggot BSF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-4.png" alt="Maggot BSF" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                       <div class="absolute top-4 right-4 bg-purple-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
                         <i class="fa-solid fa-check mr-1"></i> Protein Tinggi
                     </div>
@@ -279,7 +338,7 @@
 
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tanah Kompos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-5.png" alt="Tanah Kompos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
                 <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
                       <div class="flex gap-2 mb-3">
@@ -320,7 +379,7 @@
 
             <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sabun Eco Enzyme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <img src="assets/img/marketplace/market-6.png" alt="Sabun Eco Enzyme" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 </div>
                 <div class="p-6 flex flex-col flex-grow bg-[#fcfcfb]">
                       <div class="flex gap-2 mb-3">
@@ -525,19 +584,37 @@
             <button onclick="closeModal()" class="w-full py-3.5 rounded-full bg-leafia-main text-white font-bold hover:bg-leafia-dark transition-colors shadow-lg">Kembali Belanja</button>
         </div>
     </div>
-    <footer class="bg-leafia-dark text-white pt-16 pb-8 mt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <footer class="relative bg-leafia-dark text-white pt-16 pb-8 overflow-hidden mt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/footer.png" 
+                 alt="Footer Background" 
+                 class="w-full h-full object-cover opacity-100">
+        </div>
+    
+        <!-- Overlay Hijau -->
+        <div class="absolute inset-0 bg-leafia-main/95 -z-1"></div>
+    
+        <!-- Footer Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand -->
                 <div class="md:col-span-1">
                     <div class="flex items-center gap-2 mb-6">
-                        <div class="text-leafia-yellow text-2xl"><i class="fa-solid fa-leaf"></i></div>
-                        <span class="font-bold text-2xl tracking-tight">Leafia</span>
+                        <img src="assets/img/logo/yellow.png" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                        <span class="font-bold text-2xl tracking-tight text-leafia-yellow">Leafia</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Platform inovatif untuk mengelola sampah plastik dan menciptakan lingkungan yang lebih bersih dan berkelanjutan untuk generasi mendatang.</p>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                        Platform inovatif mengelola sampah organik menuju lingkungan bersih dan berkelanjutan untuk generasi mendatang.
+                    </p>
                 </div>
+    
+                <!-- Links 1 -->
                 <div>
                     <h5 class="font-bold text-lg mb-6 text-white">Tautan Cepat</h5>
-                    <ul class="space-y-3 text-sm text-gray-300">
+                    <ul class="space-y-3 text-sm text-gray-200">
                         <li><a href="index.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Beranda</a></li>
                         <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event</a></li>
                         <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kirim Sampah</a></li>
@@ -545,28 +622,44 @@
                         <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi</a></li>
                     </ul>
                 </div>
+    
+                <!-- Services -->
                 <div>
                     <h5 class="font-bold text-lg mb-6 text-white">Layanan</h5>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pickup Sampah</a></li>
-                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Edukasi Lingkungan</a></li>
-                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Program Event</a></li>
-                        <li><a href="marketplace.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Marketplace Hijau</a></li>
+                    <ul class="space-y-3 text-sm text-gray-200">
+                        <li><a href="pickup.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Jemput Kompos</a></li>
+                        <li><a href="edukasi.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Pelatihan Maggot</a></li>
+                        <li><a href="events.html" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Bank Sampah</a></li>
+                        <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>Konsultasi</a></li>
                         <li><a href="#" class="hover:text-leafia-yellow transition-colors"><i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ</a></li>
                     </ul>
                 </div>
+    
+                <!-- Contact -->
                 <div>
                     <h5 class="font-bold text-lg mb-6 text-white">Hubungi Kami</h5>
-                    <ul class="space-y-4 text-sm text-gray-300">
-                        <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i><span>Jl. Raya Ubud No. 88 Bali, Indonesia 80571</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-leafia-yellow"></i><span>+62-361-123-4567</span></li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-leafia-yellow"></i><span>info@leafia.org</span></li>
+                    <ul class="space-y-4 text-sm text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-leafia-yellow"></i>
+                            <span>Markas Kompos, Jl. Lestari No. 88<br>Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-leafia-yellow"></i>
+                            <span>+62-812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-leafia-yellow"></i>
+                            <span>halo@leafia.org</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-500">© 2025 Leafia. Semua hak dilindungi undang-undang.</div>
+    
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-300">
+                &copy; 2025 Leafia. Dikelola oleh Komunitas Leafia.
+            </div>
         </div>
-    </footer>
+    </footer>  
 
     <script>
         const modal = document.getElementById('purchaseModal');
@@ -600,6 +693,7 @@
             step2.classList.remove('hidden');
         }
     </script>
-
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/profile.js"></script>
 </body>
 </html>

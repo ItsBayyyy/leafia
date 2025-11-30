@@ -37,12 +37,12 @@
             <div class="flex justify-between items-center h-12">
                 <!-- Logo -->
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <div class="text-leafia-main text-2xl"><i class="fa-solid fa-leaf"></i></div>
-                    <span class="font-bold text-xl tracking-tight text-leafia-dark">Leafia</span>
-                </a>
+                    <img src="assets/img/logo/green.png" onerror="this.src='https://placehold.co/32x32/0f5142/ffffff?text=L'" alt="Leafia Logo" class="w-8 h-8 object-contain" />
+                    <span class="font-bold text-xl tracking-tight text-leafia-main">Leafia</span>
+                </a>  
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                <!-- Desktop Menu (Hidden on Tablet, Visible on Laptop lg:) -->
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-gray-600">
                     <a href="index.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Beranda</a>
                     <a href="event.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Event</a>
                     <a href="edukasi.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Edukasi</a>
@@ -50,19 +50,74 @@
                     <a href="marketplace.html" class="text-leafia-main bg-transparent hover:bg-leafia-light hover:text-leafia-main rounded-full px-4 py-2 transition">Marketplace</a>
                 </div>
 
-                <!-- User Profile -->
-                <div class="hidden md:flex items-center gap-3">
-                    <div class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-dark transition-colors">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Profile">
-                        <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                <!-- User Profile (Desktop) -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <div class="relative">
+                        <button id="profile-btn" onclick="toggleProfileMenu()" class="flex items-center gap-2 bg-leafia-main text-white px-1 pl-1 pr-4 py-1 rounded-full cursor-pointer hover:bg-leafia-main/80 transition-colors focus:outline-none">
+                            <img src="assets/img/profile/profile.png" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="Profile">
+                            <i class="fa-solid fa-chevron-down text-xs ml-1 transition-transform duration-200" id="profile-chevron"></i>
+                        </button>
+
+                        <!-- Profile Dropdown Modal -->
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-3 w-60 bg-[#fcfcfb] rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-4 z-50 origin-top-right transition-all duration-200 ease-in-out opacity-0 scale-95 transform">
+                            <!-- User Info -->
+                            <div class="mb-4 pb-3 border-b border-gray-100">
+                                <h4 class="font-bold text-lg text-leafia-dark mb-0.5">Jane Doe</h4>
+                                <p class="text-xs text-leafia-main font-medium">janedoe@leafia.com</p>
+                            </div>
+                            
+                            <!-- Menu Items -->
+                            <ul class="space-y-1">
+                                <li>
+                                    <a href="profile.html" class="flex items-center gap-3 text-leafia-dark hover:bg-leafia-light/50 hover:text-leafia-main px-3 py-2 rounded-xl transition-all font-bold text-sm group">
+                                        <span class="w-6 flex justify-center">
+                                            <i class="fa-solid fa-user text-base text-leafia-main group-hover:scale-110 transition-transform"></i>
+                                        </span>
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center gap-3 text-rose-500 hover:bg-rose-50 px-3 py-2 rounded-xl transition-all font-bold text-sm group">
+                                        <span class="w-6 flex justify-center">
+                                            <i class="fa-solid fa-arrow-right-from-bracket text-base text-rose-500 group-hover:scale-110 transition-transform"></i>
+                                        </span>
+                                        Keluar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-leafia-dark hover:text-leafia-main focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                <!-- Mobile menu button (Visible on Tablet/Mobile) -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-leafia-main hover:text-main-400 focus:outline-none transition-colors p-2">
+                        <i class="fa-solid fa-bars text-2xl" id="hamburger-icon"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile/Tablet Menu Dropdown (Matches White Navbar Theme) -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-xl transition-all duration-300 origin-top transform">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Beranda</a>
+                <a href="event.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Event</a>
+                <a href="edukasi.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Edukasi</a>
+                <a href="pickup.html" class="block text-leafia-main bg-leafia-light px-4 py-3 rounded-xl font-bold transition-colors">Kirim Sampah</a>
+                <a href="marketplace.html" class="block text-gray-600 hover:bg-leafia-light hover:text-leafia-main px-4 py-3 rounded-xl font-medium transition-colors">Marketplace</a>
+                
+                <!-- Mobile Profile Section -->
+                <div class="border-t border-gray-100 mt-4 pt-4 pb-2">
+                    <div class="flex items-center gap-3 px-4 mb-3">
+                        <img src="assets/img/profile/profile.png" onerror="this.src='https://randomuser.me/api/portraits/women/44.jpg'" class="w-10 h-10 rounded-full border-2 border-leafia-main object-cover" alt="Profile">
+                        <div>
+                            <p class="text-leafia-dark font-bold">Jane Doe</p>
+                            <p class="text-xs text-gray-500">janedoe@leafia.com</p>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="block text-gray-600 hover:text-leafia-main px-4 py-2 text-sm"><i class="fa-solid fa-user mr-2"></i> Lihat Profil</a>
+                    <a href="#" class="block text-rose-500 hover:text-rose-600 px-4 py-2 text-sm"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Keluar</a>
                 </div>
             </div>
         </div>
@@ -139,8 +194,8 @@
                         </div>
                     </div>
                     
-                    <button type="button" onclick="openSuccessModal()" class="bg-leafia-yellow text-leafia-dark px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg inline-flex items-center gap-2 w-full md:w-auto justify-center">
-                        Pickup Sampah <i class="fa-solid fa-arrow-right"></i>
+                    <button type="button" onclick="openSuccessModal()" class="group bg-leafia-yellow text-leafia-dark px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-colors shadow-lg inline-flex items-center gap-2 w-full md:w-auto justify-center">
+                        Pickup Sampah <i class="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
                     </button>
                 </form>
             </div>
@@ -455,6 +510,7 @@
             }
         }
     </script>
-
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/profile.js"></script>
 </body>
 </html>
