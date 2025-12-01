@@ -63,9 +63,10 @@ Berdasarkan data penelitian:
 |-----------|--------|
 | **HTML5** | Struktur dasar website |
 | **Tailwind CSS** | Styling dan responsive design |
-| **JavaScript (Vanilla)** | Interaksi dan logika aplikasi |
+| **JavaScript (Vanilla)** | Interaksi |
 | **AOS Library** | Animasi on-scroll |
 | **Font Awesome** | Ikon dan visual assets |
+| **Boxicons** | Ikon |
 
 ## 🎨 UI/UX Design
 
